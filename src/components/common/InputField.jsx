@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-const InputField = ({ typeText, placeholderText, extraText, inputLabel }) => {
+const InputField = ({
+  typeText,
+  placeholderText,
+  extraText,
+  inputLabel,
+  name,
+  value,
+  onChange,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -23,7 +31,7 @@ const InputField = ({ typeText, placeholderText, extraText, inputLabel }) => {
       : normalizedTypeText;
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full font-gilroy">
       <label
         className=" text-xl font-semibold cursor-pointer"
         htmlFor={inputLabel}
@@ -37,6 +45,9 @@ const InputField = ({ typeText, placeholderText, extraText, inputLabel }) => {
         className="w-full mt-2 border border-[#ADADAD] rounded-lg placeholder:text-[#808080] px-4 py-3 md:py-4 outline-none"
         placeholder={placeholderText}
         required
+        name={name}
+        value={value}
+        onChange={onChange}
       />
       {normalizedTypeText === "password" &&
         normalizedExtraText === "sign up" && (

@@ -12,6 +12,7 @@ export default {
         gilroy: ["Gilroy", "sans-serif"],
         manrope: ["Manrope", "sans-serif"],
         DMsans: ["DM Sans", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },
