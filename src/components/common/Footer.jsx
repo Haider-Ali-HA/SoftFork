@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import SoftForkLogo from "/SoftForkLogo.svg";
 import Linkedin from "../../assets/footer/linkedin.png";
 import Twitter from "../../assets/footer/twitter.png";
 import Messenger from "../../assets/footer/messenger.png";
 import Twoo from "../../assets/footer/twoo.png";
-import Button from "./Button";
-import InputField from "./InputField";
-import MainHeading from "./MainHeading";
+import Model from "./Model";
+import ButtonFilled from "./ButtonFilled";
+import ButtonOutline from "./ButtonOutline";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [open, setOpen] = useState(false); // State for modal visibility
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <div className=" bg-white text-black  py-20 px-7 lg:px-20 flex flex-col gap-10 font-manrope">
+    <div className="bg-white text-black py-20 px-7 lg:px-20 flex flex-col gap-10 font-manrope">
       <hr className="border-[#E5E5EA]" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   gap-7 xl:gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 xl:gap-0">
         <div className="flex flex-col gap-7">
           <div className="flex gap-3 items-center">
             <img src={SoftForkLogo} className="w-9" alt="softfork logo" />
-            <h1 className="text-[#471E4B] text-lg font-black">SoftFork</h1>
+            <h1 className="text-primary text-lg font-black">SoftFork</h1>
           </div>
-          <p className="w-52 text-[#757095] text-sm md:text-base">
+          <p className="w-52 text-secondary text-sm md:text-base">
             Simple innate summer fat appear basket his desire joy.
           </p>
           <div className="flex gap-5 items-center">
@@ -47,9 +52,9 @@ const Footer = () => {
             <li>Contact templates</li>
           </ul>
         </div>
-        <div className="flex flex-col gap-4 ">
-          <h1 className="font-semibold text-xl ">Join Our Newsletter</h1>
-          <div className="flex  ">
+        <div className="flex flex-col gap-4">
+          <h1 className="font-semibold text-xl">Join Our Newsletter</h1>
+          <div className="flex">
             <input
               className="bg-[#F9F9F9] px-[4%] py-3 outline-none rounded-l-full text-sm md:text-base"
               type="email"
@@ -60,7 +65,6 @@ const Footer = () => {
             </button>
           </div>
           <p className="text-gray-400 text-sm md:text-base w-5/6">
-            {" "}
             * Will send you weekly updates for your better finance management.
           </p>
         </div>
@@ -69,14 +73,22 @@ const Footer = () => {
       <p className="text-center text-sm md:text-base">
         Copyright @ SoftFork {currentYear}. All Rights Reserved.
       </p>
-      <Button text="Manage Project" />
-      <InputField
-        inputLabel="name"
-        typeText="Password"
-        placeholderText="Name"
-        extraText="sign up"
+      {/* Button to trigger modal */}
+      <button
+        onClick={handleOpen}
+        className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+      >
+        Open Modal
+      </button>
+      {/* Modal Component */}
+      <Model
+        open={open}
+        handleClose={handleClose}
+        title="Welcome to SoftFork"
+        content="Thank you for exploring our platform!"
       />
-      <MainHeading text="Log In" />
+      <ButtonFilled text="Submit" />
+      <ButtonOutline text="Cancel" extraText="anything"/>
     </div>
   );
 };
