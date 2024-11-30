@@ -74,21 +74,21 @@ const Footer = () => {
         Copyright @ SoftFork {currentYear}. All Rights Reserved.
       </p>
       {/* Button to trigger modal */}
-      <button
+      {/* <button
         onClick={handleOpen}
         className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
       >
         Open Modal
-      </button>
+      </button> */}
       {/* Modal Component */}
-      <Model
+      {/* <Model
         open={open}
         handleClose={handleClose}
         title="Welcome to SoftFork"
         content="Thank you for exploring our platform!"
-      />
-      <ButtonFilled text="Submit" />
-      <ButtonOutline text="Cancel" extraText="anything"/>
+      /> */}
+      {/* <ButtonFilled text="Submit" /> */}
+      {/* <ButtonOutline text="Cancel" extraText="" showIcon={true}/> */}
     </div>
   );
 };

@@ -41,7 +41,7 @@ const InputField = ({ typeText, placeholderText, extraText, inputLabel }) => {
       {normalizedTypeText === "password" &&
         normalizedExtraText === "sign up" && (
           <span
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            className="absolute right-4 top-[35%] cursor-pointer"
             onClick={togglePasswordVisibility}
           >
             {showPassword ? (
