@@ -23,7 +23,7 @@ const TermsAndAgreements = () => {
   };
 
   return (
-    <div className="w-full h-full py-20 mt-24 flex items-center justify-center flex-col px-72 gap-10">
+    <div className="w-full h-full py-20 mt-24 flex items-center justify-center  flex-col px-7 md:px-20 xl:px-72 gap-10">
       <SecondHeading text="Terms and Agreements" />
       <p className="text-secondary text-lg">
         What is Lorem Ipsum?
@@ -80,9 +80,14 @@ const TermsAndAgreements = () => {
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        <p className="text-light text-lg">Agree to all terms and conditions</p>
+        <p
+          className="text-light text-lg cursor-pointer"
+          onClick={() => setIsChecked(!isChecked)}
+        >
+          Agree to all terms and conditions
+        </p>
       </div>
-      <div className="w-2/4">
+      <div className="w-full md:w-2/4">
         <ButtonFilled text="Create Account" onClick={handleCreateAccount} />
       </div>
     </div>

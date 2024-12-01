@@ -5,32 +5,37 @@ import Outlook from "../../assets/auth/outlook.png";
 import MainHeading from "../../components/common/MainHeading";
 import InputField from "../../components/common/InputField";
 import ButtonFilled from "../../components/common/ButtonFilled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const Navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
     lastName: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    Navigate("/organization-auth/organization-details")
   };
 
   return (
     <div className=" w-full h-full  py-20 mt-24 flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="border  w-[32rem] gap-9 rounded-md border-gray-200 p-11 flex flex-col items-center justify-center">
+      <form
+        onSubmit={handleSubmit}
+        className="border  w-[32rem] gap-9 rounded-md border-gray-200 p-11 flex flex-col items-center justify-center"
+      >
         <MainHeading text="Sign up" />
         <div className="flex gap-4">
           <div className="border w-20 h-12 cursor-pointer  flex items-center justify-center rounded-md  border-gray-200">
@@ -52,7 +57,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-col md:flex-row">
           <InputField
             typeText="text"
             placeholderText="First name"
@@ -86,7 +91,10 @@ const Signup = () => {
 
         <div className="flex w-full gap-2 items-center justify-center">
           <p className="text-light ">Have an Account ?</p>
-          <Link to="/organization-auth/login" className="text-[#0080FF]  hover:underline  text-end">
+          <Link
+            to="/organization-auth/login"
+            className="text-[#0080FF]  hover:underline  text-end"
+          >
             Sign in
           </Link>
         </div>

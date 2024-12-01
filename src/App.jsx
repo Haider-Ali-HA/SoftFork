@@ -9,7 +9,7 @@ import AdminContactDetails from "./pages/organizationAuth/AdminContactDetails";
 import FundingDetails from "./pages/organizationAuth/FundingDetails";
 import TermsAndAgreements from "./pages/organizationAuth/TermsAndAgreements";
 import ImportEmployees from "./pages/organizationAuth/ImportEmployees";
-import Navbar2 from "./components/common/Navbar2";
+import OrganizationInvites from "./pages/organizationAuth/OrganizationInvites";
 
 const App = () => {
   return (
@@ -31,10 +31,9 @@ const App = () => {
           <Route path="funding-details" element={<FundingDetails />} />
           <Route path="terms&agreements" element={<TermsAndAgreements />} />
           <Route path="import-employees" element={<ImportEmployees />} />
+          <Route path="organization-invites" element={<OrganizationInvites />} />
         </Route>
       </Routes>
-    <Navbar2 />
-      {/* <Router><Route path="/" component={Home} /></Router> */}
       <Footer />
     </>
   );

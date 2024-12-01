@@ -2,7 +2,8 @@ import React from "react";
 import UpdateModel from "../../assets/model/model-tick.png";
 import CloseIcon from "@mui/icons-material/Close";
 import { Typography, Box, Modal } from "@mui/material";
-const Model = ({ open, handleClose, title, content }) => {
+
+const Model = ({ open, handleClose, title, content, buttonText }) => {
   return (
     <div>
       <Modal
@@ -13,7 +14,7 @@ const Model = ({ open, handleClose, title, content }) => {
         aria-describedby="keep-mounted-modal-description"
         className="flex justify-center items-center h-full w-full"
       >
-        <Box className="flex justify-center outline-none p-10 rounded-2xl h-3/4 lg:h-2/4 w-5/6  lg:w-2/5 gap-5 flex-col items-center bg-white relative">
+        <Box className="flex justify-center outline-none p-10 rounded-2xl h-auto w-5/6  lg:w-2/6 gap-5 flex-col items-center bg-white relative">
           <CloseIcon
             onClick={handleClose}
             sx={{
@@ -26,7 +27,7 @@ const Model = ({ open, handleClose, title, content }) => {
           />
           <img
             src={UpdateModel}
-            className="w-20 md:w-28"
+            className="w-20 md:w-28 "
             alt="update model image"
           />
           <Typography
@@ -47,11 +48,11 @@ const Model = ({ open, handleClose, title, content }) => {
           </Typography>
 
           <button
-            className="bg-primary text-white w-52 h-12 text-base rounded-lg flex gap-2 items-center justify-center"
+            className="bg-primary shadow-md text-white w-52 h-12 text-base rounded-lg flex gap-2 items-center justify-center"
             onClick={handleClose}
             type="submit"
           >
-            Continue
+            {buttonText}
           </button>
         </Box>
       </Modal>

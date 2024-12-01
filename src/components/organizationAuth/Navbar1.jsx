@@ -4,7 +4,7 @@ import SoftForkLogo from "/SoftForkLogo.svg";
 
 const Navbar1 = () => {
   return (
-    <div className=" fixed top-0 z-30 bg-white  left-0 h-20 px-20 w-full shadow-md shadow-[#f0f0f0] items-center  flex justify-between">
+    <div className=" fixed top-0 z-30 bg-white  left-0 h-20 px-7 md:px-20 w-full shadow-md shadow-[#f0f0f0] items-center  flex justify-between">
       <div className="flex gap-3 items-center">
         <img src={SoftForkLogo} className="w-9" alt="softfork logo" />
         <h1 className="text-primary text-lg font-bold font-gilroy">SoftFork</h1>
