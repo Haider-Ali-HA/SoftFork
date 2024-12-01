@@ -84,7 +84,7 @@ const Fund = () => {
             <div className="mt-24"></div>
             <MainHeading text={"Discover Ideas"} />
             <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
-            <div className="mt-10 grid grid-cols-1 mt-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {projects.map((project, index) => (
                     <ProjectCard
                         key={index}
