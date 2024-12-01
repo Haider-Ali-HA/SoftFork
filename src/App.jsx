@@ -10,10 +10,12 @@ import FundingDetails from "./pages/organizationAuth/FundingDetails";
 import TermsAndAgreements from "./pages/organizationAuth/TermsAndAgreements";
 import ImportEmployees from "./pages/organizationAuth/ImportEmployees";
 import OrganizationInvites from "./pages/organizationAuth/OrganizationInvites";
+import Fund from "./pages/Fund/Fund";
+import Earn from "./pages/Earn/Earn";
 
 const App = () => {
   return (
-    <>
+    <div className="w-full max-w-[1400px] mx-auto" >
       <Routes>
         {/* Define the parent layout */}
         <Route path="/organization-auth" element={<OrganizationAuthLayout />}>
@@ -34,8 +36,11 @@ const App = () => {
           <Route path="organization-invites" element={<OrganizationInvites />} />
         </Route>
       </Routes>
+
+      {/* <Fund/> */}
+      <Earn/>
       <Footer />
-    </>
+    </div>
   );
 };
 
