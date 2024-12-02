@@ -21,13 +21,13 @@ const ProjectCard = ({
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden relative">
       <SlOptions  className="absolute top-2 right-2 cursor-pointer" color="#9B9B9B"/>
-      <div className="p-6">
+      <div className="p-1">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         {
           showSeries ? (
             <div className="flex justify-between items-center">
               <ProfileDetail profileName={author} profileEmail={authorEmail} profilePhoto={profilePhoto} />
-              <div className="bg-[#7A70BA] bg-opacity-[10%] rounded-md text-[#7A70BA] flex items-center justify-center p-2 text-sm">
+              <div className="bg-[#7A70BA] bg-opacity-[10%] rounded-md text-[#7A70BA] flex items-center justify-center p-2 text-xs">
                 {seriesName}
               </div>
             </div>

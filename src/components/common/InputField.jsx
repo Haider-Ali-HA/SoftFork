@@ -27,18 +27,22 @@ const InputField = ({
         ? "text"
         : "password"
       : normalizedTypeText === "password"
-      ? "text" // If extraText is not "sign up", always show the text
-      : normalizedTypeText;
+        ? "text" // If extraText is not "sign up", always show the text
+        : normalizedTypeText;
 
   return (
     <div className="relative w-full font-gilroy">
-      <label
-        className=" text-xl font-semibold cursor-pointer"
-        htmlFor={inputLabel}
-      >
-        {" "}
-        {inputLabel}
-      </label>
+      {
+        inputLabel && (
+          <label
+            className=" text-xl font-semibold cursor-pointer"
+            htmlFor={inputLabel}
+          >
+            {" "}
+            {inputLabel}
+          </label>
+        )
+      }
       <input
         id={inputLabel}
         type={inputType}

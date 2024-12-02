@@ -12,6 +12,13 @@ import ImportEmployees from "./pages/organizationAuth/ImportEmployees";
 import OrganizationInvites from "./pages/organizationAuth/OrganizationInvites";
 import Fund from "./pages/Fund/Fund";
 import Earn from "./pages/Earn/Earn";
+import Homepage from "./pages/Homepage/Homepage";
+import DiscoverIdeas from "./pages/Fund/DiscoverIdeas";
+import GigsAvailable from "./pages/Earn/GigsAvailable";
+import Navbar3 from "./components/common/Navbar3";
+import GigDetails from "./components/earn/GigDetails";
+import WorkDeliver from "./components/earn/WorkDeliver";
+import Build from "./pages/build/Build";
 
 const App = () => {
   return (
@@ -37,8 +44,19 @@ const App = () => {
         </Route>
       </Routes>
 
+    <Navbar3/>
+
       {/* <Fund/> */}
-      <Earn/>
+      {/* <DiscoverIdeas/> */}
+      
+      {/* <Earn/> */}
+      {/* <GigsAvailable/> */}
+      {/* <GigDetails/> */}
+      {/* <WorkDeliver/> */}
+
+      <Build/>
+      
+      {/* <Homepage /> */}
       <Footer />
     </div>
   );

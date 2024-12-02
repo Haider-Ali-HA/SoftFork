@@ -149,7 +149,7 @@ const Fund = () => {
     
 
 return (
-    <div className="w-full">
+    <div className="w-full px-4">
         <div className="mt-10"></div>
         <MainHeading text={"Number of Tokens"} />
         <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />

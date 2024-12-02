@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileDetail from '../common/ProfileDetail'
 import ButtonFilled from '../common/ButtonFilled'
+import ButtonOutline from '../common/ButtonOutline'
 
 const GigCard = ({
     title,
@@ -10,7 +11,8 @@ const GigCard = ({
     authorEmail,
     profilePhoto,
     price,
-    datePosted
+    datePosted,
+    showReadMore = false,
 }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6">
@@ -37,7 +39,10 @@ const GigCard = ({
     />
     <p className="text-[#4A4A4A] text-md pb-4 font-semibold">Posted {datePosted}</p>
     </div>
-    <div className="flex justify-between items-center">
+    <div className="flex gap-2 justify-between items-center">
+    {showReadMore && (
+        <ButtonOutline text="Read More About Gig" />
+    )}
         <ButtonFilled text="Apply Now" />
     </div>
 </div>

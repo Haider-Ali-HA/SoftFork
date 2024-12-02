@@ -5,7 +5,8 @@ import profile1 from "/images/profile1.png"
 import ProjectCard from '../../components/Homepage/ProjectCard';
 import ButtonOutline from '../../components/common/ButtonOutline';
 import GigCard from '../../components/Homepage/GigCard';
-import CreateLaunchProject from '../../components/Homepage/CreateLaunchProject';
+import CreateLaunchProject from '../../components/common/CreateLaunchProject';
+
 
 
 const Homepage = () => {
@@ -101,7 +102,7 @@ const Homepage = () => {
     ]
 
     return (
-        <div className="w-full">
+        <div className="w-full px-4">
             <div className="mt-6"></div>
             <MainHeading text={"Ideas For Funding"} />
             <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
@@ -122,7 +123,7 @@ const Homepage = () => {
                 ))}
             </div>
 
-            <div className="w-[10%] mx-auto mt-4 mb-6">
+            <div className="w-[10%] mx-auto mt-8 mb-12">
                 <ButtonOutline text="Show All" showIcon />
             </div>
 
@@ -138,18 +139,19 @@ const Homepage = () => {
                         author={gig.author}
                         authorEmail={gig.authorEmail}
                         profilePhoto={gig.profilePhoto}
-                        price={gig.price} 
+                        price={gig.price}
                         datePosted={gig.datePosted}
-                        />
+                    />
                 ))
                 }
             </div>
 
-            <div className="w-[10%] mx-auto mt-10 mb-14">
+            <div className="w-[10%] mx-auto mt-12 mb-14">
                 <ButtonOutline text="Show All" showIcon />
             </div>
 
-            <CreateLaunchProject/>
+            <CreateLaunchProject />
+
 
 
         </div>

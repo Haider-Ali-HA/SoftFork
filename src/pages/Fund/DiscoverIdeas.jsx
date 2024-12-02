@@ -159,7 +159,7 @@ const DiscoverIdeas = () => {
 
 
     return (
-        <div className="w-full">
+        <div className="w-full px-4">
             <div className="mt-6"></div>
 
             <MainHeading text={"Discover Ideas"} />
