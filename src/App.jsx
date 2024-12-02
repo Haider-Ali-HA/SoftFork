@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/common/Footer";
+
+// organization imports
 import OrganizationAuthLayout from "./layout/OrganizationAuthLayout";
 import Login from "./pages/organizationAuth/Login";
 import Signup from "./pages/organizationAuth/Signup";
@@ -20,13 +22,19 @@ import GigDetails from "./components/earn/GigDetails";
 import WorkDeliver from "./components/earn/WorkDeliver";
 import Build from "./pages/build/Build";
 
+// employee imports
+import EmployeeAuthLayout from "./layout/EmployeeAuthLayout";
+import EmployeeLogin from "./pages/employeeAuth/EmployeeLogin";
+import NecessaryEmployeeSignup from "./pages/employeeAuth/NecessaryEmployeeSignup";
+import AdditionalEmployeeSignup from "./pages/employeeAuth/AdditionalEmployeeSignup";
+import SecurityQuestion from "./pages/employeeAuth/SecurityQuestion";
+
 const App = () => {
   return (
     <div className="w-full max-w-[1400px] mx-auto" >
       <Routes>
-        {/* Define the parent layout */}
+        {/* Routes for Organization Login and Registration  start */}
         <Route path="/organization-auth" element={<OrganizationAuthLayout />}>
-          {/* Nested Routes */}
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route
@@ -40,8 +48,27 @@ const App = () => {
           <Route path="funding-details" element={<FundingDetails />} />
           <Route path="terms&agreements" element={<TermsAndAgreements />} />
           <Route path="import-employees" element={<ImportEmployees />} />
-          <Route path="organization-invites" element={<OrganizationInvites />} />
+          <Route
+            path="organization-invites"
+            element={<OrganizationInvites />}
+          />
         </Route>
+        {/* Routes for Organization Login and Registration  end */}
+
+        {/* Routes for employee Login and Registration  start */}
+        <Route path="/employee-auth" element={<EmployeeAuthLayout />}>
+          <Route path="login" element={<EmployeeLogin />} />
+          <Route
+            path="necessary-signup"
+            element={<NecessaryEmployeeSignup />}
+          />
+          <Route
+            path="additional-signup"
+            element={<AdditionalEmployeeSignup />}
+          />
+          <Route path="security-question" element={<SecurityQuestion />} />
+        </Route>
+        {/* Routes for employee Login and Registration  end */}
       </Routes>
 
     <Navbar3/>

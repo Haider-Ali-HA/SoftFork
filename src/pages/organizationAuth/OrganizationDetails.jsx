@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import InputField from "../../components/common/InputField";
 import ButtonFilled from "../../components/common/ButtonFilled";
 import SecondHeading from "../../components/common/SecondHeading";
-import Upload from "../../components/common/Upload";
 import { Link, useNavigate } from "react-router-dom";
 import RightArrow from "../../assets/auth/arrow-right.png";
 import LeftArrow from "../../assets/auth/arrow-left.png";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import UploadFilled from "../../components/common/UploadFilled";
 
 const OrganizationDetails = () => {
   const Navigate = useNavigate();
@@ -44,7 +44,10 @@ const OrganizationDetails = () => {
 
   return (
     <div className="w-full h-full py-20 mt-24 flex items-center justify-center lg:gap-[10%] px-4">
-      <Link to="/organization-auth/login" className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full ">
+      <Link
+        to="/organization-auth/login"
+        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full "
+      >
         <BsArrowLeftShort className="text-3xl" />
       </Link>
       <form
@@ -58,7 +61,7 @@ const OrganizationDetails = () => {
         </div>
 
         {/* Upload Component */}
-        <Upload
+        <UploadFilled
           text="Upload Company Logo"
           buttonText="Upload Logo"
           onFileSelect={handleLogoUpload}
@@ -127,7 +130,10 @@ const OrganizationDetails = () => {
         <ButtonFilled text="Next" type="submit" />
         {/* </button> */}
       </form>
-      <Link to="/organization-auth/admin-contact-details" className="hidden sm:block  p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full ">
+      <Link
+        to="/organization-auth/admin-contact-details"
+        className="hidden sm:block  p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full "
+      >
         <BsArrowRightShort className="text-3xl" />
       </Link>
     </div>
