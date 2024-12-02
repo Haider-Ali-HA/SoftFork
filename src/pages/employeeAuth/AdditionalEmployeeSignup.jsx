@@ -1,18 +1,22 @@
 import React, { useState } from "react";
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import UploadFilled from "../../components/common/UploadFilled";
 import InputField from "../../components/common/InputField";
 import ButtonFilled from "../../components/common/ButtonFilled";
 import SecondHeading from "../../components/common/SecondHeading";
+import TagInputField from "../../components/common/TagInputField";
 import { Link, useNavigate } from "react-router-dom";
-import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
-import UploadFilled from "../../components/common/UploadFilled";
 
 const AdditionalEmployeeSignup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     jobTitle: "",
     department: "",
-    pic: null, // To store the uploaded profile picture
+    pic: null, // Store uploaded profile picture
   });
+  const [skills, setSkills] = useState([]);
+  const [error, setError] = useState(""); // Error state for validation
+  const [skillsError, setSkillsError] = useState(""); // Error for skills validation
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,19 +31,37 @@ const AdditionalEmployeeSignup = () => {
       ...formData,
       pic: file,
     });
+    setError(""); // Clear error if a file is uploaded
+  };
+
+  const handleSkillsChange = (newSkills) => {
+    setSkills(newSkills);
+    setSkillsError(""); // Clear skills error if updated
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // Logs form data
-    navigate("/employee-auth/security-question"); // Navigates to the specified route
+
+    // Validation: Check if profile picture and skills are uploaded
+    if (!formData.pic) {
+      setError("Profile picture is required.");
+      return;
+    }
+    if (skills.length === 0) {
+      setSkillsError("At least one skill is required.");
+      return;
+    }
+
+    // Log form data and proceed to the next step (next page)
+    console.log({ ...formData, skills });
+    navigate("/employee-auth/security-question");
   };
 
   return (
     <div className="w-full h-full py-20 mt-24 flex items-center justify-center lg:gap-[10%] px-4">
       <Link
         to="/employee-auth/necessary-signup"
-        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full "
+        className="cursor-pointer hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full"
       >
         <BsArrowLeftShort className="text-3xl" />
       </Link>
@@ -52,12 +74,16 @@ const AdditionalEmployeeSignup = () => {
             <SecondHeading text="Additional Fields for Signup" />
           </div>
         </div>
+
+        {/* Upload Profile Picture */}
         <UploadFilled
           text="Upload Profile Picture"
           buttonText="Upload Picture"
           onFileSelect={handlePictureUpload}
         />
+        {error && <p className="text-red-500 mt-2">{error}</p>}
 
+        {/* Job Title Input */}
         <InputField
           typeText="text"
           inputLabel="Job Title/Role"
@@ -65,6 +91,8 @@ const AdditionalEmployeeSignup = () => {
           value={formData.jobTitle}
           onChange={handleChange}
         />
+
+        {/* Department Input */}
         <InputField
           typeText="text"
           inputLabel="Department"
@@ -73,11 +101,21 @@ const AdditionalEmployeeSignup = () => {
           onChange={handleChange}
         />
 
+        {/* Skills Input */}
+        <TagInputField
+          label="Enter Your Skills"
+          placeholder="Type a skill and press Enter"
+          tags={skills}
+          setTags={handleSkillsChange}
+        />
+        {skillsError && <p className="text-red-500 mt-2">{skillsError}</p>}
+
+        {/* Submit Button */}
         <ButtonFilled text="Next" type="submit" />
       </form>
       <Link
         to="/employee-auth/security-question"
-        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full"
+        className="cursor-pointer hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full"
       >
         <BsArrowRightShort className="text-3xl" />
       </Link>
