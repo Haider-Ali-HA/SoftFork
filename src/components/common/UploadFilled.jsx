@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-const Upload = ({ text, buttonText, onFileSelect }) => {
+const UploadFilled = ({ text, buttonText, onFileSelect }) => {
   const [fileName, setFileName] = useState(null);
   const fileInputRef = useRef(null);
 
@@ -40,4 +40,4 @@ const Upload = ({ text, buttonText, onFileSelect }) => {
   );
 };
 
-export default Upload;
+export default UploadFilled;
