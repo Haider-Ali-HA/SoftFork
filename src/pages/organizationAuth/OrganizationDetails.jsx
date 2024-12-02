@@ -3,8 +3,6 @@ import InputField from "../../components/common/InputField";
 import ButtonFilled from "../../components/common/ButtonFilled";
 import SecondHeading from "../../components/common/SecondHeading";
 import { Link, useNavigate } from "react-router-dom";
-import RightArrow from "../../assets/auth/arrow-right.png";
-import LeftArrow from "../../assets/auth/arrow-left.png";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import UploadFilled from "../../components/common/UploadFilled";
 
@@ -20,6 +18,7 @@ const OrganizationDetails = () => {
     businessEmail: "",
     logo: null, // To store the uploaded logo file
   });
+  const [error, setError] = useState(""); // Error state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +33,18 @@ const OrganizationDetails = () => {
       ...formData,
       logo: file,
     });
+    setError(""); // Clear error message if a file is uploaded
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.logo) {
+      setError("Company logo is required.");
+      return;
+    }
+
+    // Submit data and navigate if validation passes
     console.log(formData);
     Navigate("/organization-auth/admin-contact-details");
   };
@@ -56,7 +63,8 @@ const OrganizationDetails = () => {
       >
         <div className="flex w-full ">
           <div>
-            <SecondHeading className="" text="Organization Details" />
+
+          <SecondHeading text="Organization Details" />
           </div>
         </div>
 
@@ -66,10 +74,10 @@ const OrganizationDetails = () => {
           buttonText="Upload Logo"
           onFileSelect={handleLogoUpload}
         />
+        {error && <p className="text-red-500 mt-2">{error}</p>}
 
         <InputField
           typeText="text"
-          placeholderText=""
           inputLabel="Organization Name"
           name="organizationName"
           value={formData.organizationName}
@@ -77,7 +85,6 @@ const OrganizationDetails = () => {
         />
         <InputField
           typeText="text"
-          placeholderText=""
           inputLabel="Organization Size"
           name="organizationSize"
           value={formData.organizationSize}
@@ -86,7 +93,6 @@ const OrganizationDetails = () => {
         <div className="flex flex-col md:flex-row gap-5 w-full">
           <InputField
             typeText="text"
-            placeholderText=""
             inputLabel="Industry"
             name="industry"
             value={formData.industry}
@@ -94,7 +100,6 @@ const OrganizationDetails = () => {
           />
           <InputField
             typeText="text"
-            placeholderText=""
             inputLabel="Country/Location"
             name="location"
             value={formData.location}
@@ -103,7 +108,6 @@ const OrganizationDetails = () => {
         </div>
         <InputField
           typeText="text"
-          placeholderText=""
           inputLabel="Organization Website"
           name="website"
           value={formData.website}
@@ -111,7 +115,6 @@ const OrganizationDetails = () => {
         />
         <InputField
           typeText="text"
-          placeholderText=""
           inputLabel="Tax Identification Number"
           name="taxId"
           value={formData.taxId}
@@ -119,20 +122,17 @@ const OrganizationDetails = () => {
         />
         <InputField
           typeText="text"
-          placeholderText=""
           inputLabel="Business Email"
           name="businessEmail"
           value={formData.businessEmail}
           onChange={handleChange}
         />
 
-        {/* <button type="submit" className="w-full"> */}
         <ButtonFilled text="Next" type="submit" />
-        {/* </button> */}
       </form>
       <Link
         to="/organization-auth/admin-contact-details"
-        className="hidden sm:block  p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full "
+        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full "
       >
         <BsArrowRightShort className="text-3xl" />
       </Link>

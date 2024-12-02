@@ -18,6 +18,7 @@ const AdminContactDetails = () => {
     confirmPassword: "",
     profilePic: null, // To store the uploaded profile picture
   });
+  const [error, setError] = useState(""); // Error state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,10 +33,19 @@ const AdminContactDetails = () => {
       ...formData,
       profilePic: file,
     });
+    setError(""); // Clear error message if a file is uploaded
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if the profile picture is uploaded
+    if (!formData.profilePic) {
+      setError("Profile picture is required.");
+      return;
+    }
+
+    // Log form data and navigate to the next page if validation passes
     console.log(formData);
     navigate("/organization-auth/funding-details");
   };
@@ -54,7 +64,8 @@ const AdminContactDetails = () => {
       >
         <div className="w-full flex">
           <div>
-            <SecondHeading text="Admin/Primary Contact Details" />
+
+          <SecondHeading text="Admin/Primary Contact Details" />
           </div>
         </div>
 
@@ -63,6 +74,7 @@ const AdminContactDetails = () => {
           buttonText="Upload Pic"
           onFileSelect={handleProfilePicUpload}
         />
+        {error && <p className="text-red-500 mt-2">{error}</p>}
 
         <div className="flex flex-col md:flex-row gap-5 w-full">
           <InputField

@@ -64,9 +64,12 @@ const Login = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        <a href="" className="text-[#4285F4] hover:underline w-full text-end">
+        <Link
+          to="/reset-password/security-question"
+          className="text-[#4285F4] hover:underline w-full text-end"
+        >
           Forgot Password?
-        </a>
+        </Link>
 
         <ButtonFilled text="Login" type="submit" />
 

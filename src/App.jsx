@@ -28,6 +28,12 @@ import EmployeeLogin from "./pages/employeeAuth/EmployeeLogin";
 import NecessaryEmployeeSignup from "./pages/employeeAuth/NecessaryEmployeeSignup";
 import AdditionalEmployeeSignup from "./pages/employeeAuth/AdditionalEmployeeSignup";
 import SecurityQuestion from "./pages/employeeAuth/SecurityQuestion";
+import EmployeeTermsAndAgreements from "./pages/employeeAuth/EmployeeTermsAndAgreements";
+import ForgetPasswordSecurityQuestion from "./pages/common/ForgetPasswordSecurityQuestion";
+import ForgetPasswordEmail from "./pages/common/ForgetPasswordEmail";
+import OTPVerification from "./pages/common/OTPVerification";
+import CreateNewPassword from "./pages/common/CreateNewPassword";
+import ResetPasswordLayout from "./layout/ResetPasswordLayout";
 
 const App = () => {
   return (
@@ -67,8 +73,21 @@ const App = () => {
             element={<AdditionalEmployeeSignup />}
           />
           <Route path="security-question" element={<SecurityQuestion />} />
+          <Route
+            path="terms&agreements"
+            element={<EmployeeTermsAndAgreements />}
+          />
         </Route>
         {/* Routes for employee Login and Registration  end */}
+        <Route path="/reset-password" element={<ResetPasswordLayout />}>
+          <Route
+            path="security-question"
+            element={<ForgetPasswordSecurityQuestion />}
+          />
+          <Route path="email" element={<ForgetPasswordEmail />} />
+          <Route path="otp-verification" element={<OTPVerification />} />
+          <Route path="create-new-password" element={<CreateNewPassword />} />
+        </Route>
 
 
         <Route path="/" element={<Homepage />} />
@@ -83,7 +102,7 @@ const App = () => {
         </Route>
 
         <Route path="/build" element={<Build />} />
-        
+
       </Routes>
 
       {/* <Navbar3/> */}

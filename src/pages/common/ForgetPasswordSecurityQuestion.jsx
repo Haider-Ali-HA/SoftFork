@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import InputField from "../../components/common/InputField";
 import ButtonFilled from "../../components/common/ButtonFilled";
 import SecondHeading from "../../components/common/SecondHeading";
-import { Link, useNavigate } from "react-router-dom";
-import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
-const SecurityQuestion = () => {
+const ForgetPasswordSecurityQuestion = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstJobCity: "",
@@ -24,25 +23,17 @@ const SecurityQuestion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData); // Logs form data
-    navigate("/employee-auth/terms&agreements"); // Navigates to the next step
+    navigate("/reset-password/email"); // Navigates to the next step
   };
 
   return (
     <div className="w-full h-full py-20 mt-24 flex items-center justify-center lg:gap-[10%] px-4">
-      <Link
-        to="/employee-auth/additional-signup"
-        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full"
-      >
-        <BsArrowLeftShort className="text-3xl" />
-      </Link>
       <form
         onSubmit={handleSubmit}
         className="w-[45rem] gap-9 rounded-md border-gray-200 px-2 sm:p-11 flex flex-col items-center justify-center"
       >
         <div className="w-full flex">
-          <div>
-            <SecondHeading text="Security Questions" />
-          </div>
+          <SecondHeading text="Security Questions" />
         </div>
 
         <InputField
@@ -69,14 +60,8 @@ const SecurityQuestion = () => {
 
         <ButtonFilled text="Next" type="submit" />
       </form>
-      <Link
-        to="/employee-auth/terms&agreements"
-        className="hidden sm:block p-2 shadow-[0px_8px_12px_#cfcfcf] rounded-full"
-      >
-        <BsArrowRightShort className="text-3xl" />
-      </Link>
     </div>
   );
 };
 
-export default SecurityQuestion;
+export default ForgetPasswordSecurityQuestion;
