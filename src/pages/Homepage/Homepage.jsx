@@ -6,6 +6,7 @@ import ProjectCard from '../../components/Homepage/ProjectCard';
 import ButtonOutline from '../../components/common/ButtonOutline';
 import GigCard from '../../components/Homepage/GigCard';
 import CreateLaunchProject from '../../components/common/CreateLaunchProject';
+import Navbar2 from '../../components/common/Navbar2';
 
 
 
@@ -102,6 +103,8 @@ const Homepage = () => {
     ]
 
     return (
+        <>
+        <Navbar2/>
         <div className="w-full px-4">
             <div className="mt-6"></div>
             <MainHeading text={"Ideas For Funding"} />
@@ -155,6 +158,7 @@ const Homepage = () => {
 
 
         </div>
+        </>
     );
 };
 

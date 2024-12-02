@@ -6,6 +6,7 @@ import ProjectCard from '../../components/Homepage/ProjectCard';
 import { Tooltip } from '@mui/material';
 import filterIcon from "/icons/Filter.png"
 import searchIcon from "/icons/Search.png"
+import Navbar3 from '../../components/common/Navbar3';
 
 const DiscoverIdeas = () => {
 
@@ -159,6 +160,8 @@ const DiscoverIdeas = () => {
 
 
     return (
+        <>
+        <Navbar3 />
         <div className="w-full px-4">
             <div className="mt-6"></div>
 
@@ -209,6 +212,7 @@ const DiscoverIdeas = () => {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

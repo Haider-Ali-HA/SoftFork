@@ -10,15 +10,15 @@ const Navbar3 = ({showBtn=true}) => {
     const navLinks = [
         {
             name: 'Fund',
-            link: '#'
+            link: '/fund'
         },
         {
             name: 'Build',
-            link: '#'
+            link: '/build'
         },
         {
             name: 'Earn',
-            link: '#'
+            link: '/earn'
         },
         {
             name: 'Spend',
@@ -38,16 +38,20 @@ const Navbar3 = ({showBtn=true}) => {
             </div>
             <div className="flex items-center justify-center gap-4">
                 {navLinks.map((link, index) => (
-                    <NavLink href={link.link} key={index} className="text-primary font-semibold text-sm">{link.name}</NavLink>
+                    <NavLink to={link.link} key={index} className="text-primary font-semibold text-sm">{link.name}</NavLink>
                 ))}
             </div>
             <div className="flex p-3 items-center gap-4 relative justify-center">
                 <img src={notificationIcon} alt="notification" className='w-7' />
                 {
-                    showBtn && (
+                    showBtn ? (
                         <div className="flex items-center justify-center text-white bg-[#0DAC2A] p-2 rounded-lg text-sm">
                             <p>Token: 250</p>
                         </div>
+                    ):(
+                        <div className="flex items-center justify-center bg-transparent p-2 rounded-lg text-sm pr-12">
+                        {/* <p>Token: 250</p> */}
+                    </div>
                     )
                 }
 

@@ -4,6 +4,7 @@ import SubHeading from '../../components/common/SubHeading'
 import GigCard from '../../components/Homepage/GigCard'
 import ButtonOutline from '../../components/common/ButtonOutline'
 import profile1 from "/images/profile1.png"
+import Navbar3 from '../../components/common/Navbar3'
 
 const GigsAvailable = () => {
 
@@ -72,6 +73,8 @@ const GigsAvailable = () => {
 
 
     return (
+        <>
+        <Navbar3 showBtn={false}/>
         <div className="w-full px-4">
 
             <div className="mt-24"></div>
@@ -99,6 +102,7 @@ const GigsAvailable = () => {
             </div>
 
         </div>
+        </>
     )
 }
 

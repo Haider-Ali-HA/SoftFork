@@ -69,20 +69,35 @@ const App = () => {
           <Route path="security-question" element={<SecurityQuestion />} />
         </Route>
         {/* Routes for employee Login and Registration  end */}
+
+
+        <Route path="/" element={<Homepage />} />
+        <Route path="/fund" element={<Fund />} />
+        <Route path="/discover-ideas" element={<DiscoverIdeas />} />
+
+        <Route path="/earn" >
+          <Route path="" element={<Earn />} />
+          <Route path="gigs-available" element={<GigsAvailable />} />
+          <Route path="gig-details" element={<GigDetails />} />
+          <Route path="work-deliver" element={<WorkDeliver />} />
+        </Route>
+
+        <Route path="/build" element={<Build />} />
+        
       </Routes>
 
-    <Navbar3/>
+      {/* <Navbar3/> */}
 
       {/* <Fund/> */}
       {/* <DiscoverIdeas/> */}
-      
+
       {/* <Earn/> */}
       {/* <GigsAvailable/> */}
       {/* <GigDetails/> */}
       {/* <WorkDeliver/> */}
 
-      <Build/>
-      
+      {/* <Build/> */}
+
       {/* <Homepage /> */}
       <Footer />
     </div>

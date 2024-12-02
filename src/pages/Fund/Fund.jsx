@@ -5,6 +5,8 @@ import profile1 from "/images/profile1.png"
 import ProjectCard from '../../components/Homepage/ProjectCard';
 import ButtonOutline from '../../components/common/ButtonOutline';
 import FundedCard from '../../components/Homepage/FundedCard';
+import Navbar3 from '../../components/common/Navbar3';
+import { NavLink } from 'react-router-dom';
 
 const Fund = () => {
 
@@ -146,90 +148,95 @@ const Fund = () => {
             comments: 7,
         },
     ];
-    
 
-return (
-    <div className="w-full px-4">
-        <div className="mt-10"></div>
-        <MainHeading text={"Number of Tokens"} />
-        <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
 
-        <div className="flex justify-around mt-10 text-center">
-            <div className='w-full'>
-                <p className="text-2xl font-semibold text-light">Available</p>
-                <h2 className="text-4xl text-[#3D434A] font-bold">250</h2>
+    return (
+        <>
+            <Navbar3 />
+            <div className="w-full px-4">
+                <div className="mt-10"></div>
+                <MainHeading text={"Number of Tokens"} />
+                <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
+
+                <div className="flex justify-around mt-10 text-center">
+                    <div className='w-full'>
+                        <p className="text-2xl font-semibold text-light">Available</p>
+                        <h2 className="text-4xl text-[#3D434A] font-bold">250</h2>
+                    </div>
+                    <div className=' w-full border-l-2 border-l-black'>
+                        <p className="text-2xl font-semibold text-light">Committed</p>
+                        <h2 className="text-4xl text-[#3D434A] font-bold">150</h2>
+                    </div>
+                    <div className='text-2xl font-semibold w-full border-l-2 border-l-black'>
+                        <p className="text-light">Invested</p>
+                        <h2 className="text-4xl text-[#3D434A] font-bold">100</h2>
+                    </div>
+                </div>
+
+
+                <div className="mt-24"></div>
+                <MainHeading text={"Discover Ideas"} />
+                <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {projects.map((project, index) => (
+                        <ProjectCard
+                            key={index}
+                            title={project.title}
+                            author={project.author}
+                            authorEmail={project.authorEmail}
+                            description={project.description}
+                            requiredAmount={project.requiredAmount}
+                            daysRemaining={project.daysRemaining}
+                            funded={project.funded}
+                            barColor={project.barColor}
+                            profilePhoto={project.profilePhoto}
+                            showSeries={true}
+                            seriesName={project.seriesName}
+                        />
+                    ))}
+                </div>
+
+                <div className="w-[10%] mx-auto mt-4 mb-14">
+                    <NavLink className="w-full" to="/discover-ideas">
+                    <ButtonOutline text="Show All" showIcon />
+                    </NavLink>
+                </div>
+
+
+                <MainHeading text={"Your Funded Ideas"} />
+                <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
+
+                <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {fundedProjects.map((project, index) => (
+                        <FundedCard
+                            key={index}
+                            title={project.title}
+                            author={project.author}
+                            authorEmail={project.authorEmail}
+                            skills={project.skills}
+                            tasks={project.tasks}
+                            resolved={project.resolved}
+                            comments={project.comments}
+                            seeded={project.seeded}
+                            daysRemaining={project.daysRemaining}
+                            profilePhoto={project.profilePhoto}
+                        />
+                    ))}
+                </div>
+
+                <div className="w-[10%] mx-auto mt-10 mb-14">
+                    <ButtonOutline text="Show All" showIcon />
+                </div>
+
+
+                <MainHeading text={"Transaction History"} />
+                <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
+
+                TODO: Add Transaction History Component
+
             </div>
-            <div className=' w-full border-l-2 border-l-black'>
-                <p className="text-2xl font-semibold text-light">Committed</p>
-                <h2 className="text-4xl text-[#3D434A] font-bold">150</h2>
-            </div>
-            <div className='text-2xl font-semibold w-full border-l-2 border-l-black'>
-                <p className="text-light">Invested</p>
-                <h2 className="text-4xl text-[#3D434A] font-bold">100</h2>
-            </div>
-        </div>
-
-
-        <div className="mt-24"></div>
-        <MainHeading text={"Discover Ideas"} />
-        <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {projects.map((project, index) => (
-                <ProjectCard
-                    key={index}
-                    title={project.title}
-                    author={project.author}
-                    authorEmail={project.authorEmail}
-                    description={project.description}
-                    requiredAmount={project.requiredAmount}
-                    daysRemaining={project.daysRemaining}
-                    funded={project.funded}
-                    barColor={project.barColor}
-                    profilePhoto={project.profilePhoto}
-                    showSeries={true}
-                    seriesName={project.seriesName}
-                />
-            ))}
-        </div>
-
-        <div className="w-[10%] mx-auto mt-4 mb-14">
-            <ButtonOutline text="Show All" showIcon />
-        </div>
-
-
-        <MainHeading text={"Your Funded Ideas"} />
-        <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
-
-        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-           {fundedProjects.map((project, index) => (
-                <FundedCard
-                    key={index}
-                    title={project.title}
-                    author={project.author}
-                    authorEmail={project.authorEmail}
-                    skills={project.skills}
-                    tasks={project.tasks}
-                    resolved={project.resolved}
-                    comments={project.comments}
-                    seeded={project.seeded}
-                    daysRemaining={project.daysRemaining}
-                    profilePhoto={project.profilePhoto}
-                />
-            ))}
-        </div>
-
-        <div className="w-[10%] mx-auto mt-10 mb-14">
-            <ButtonOutline text="Show All" showIcon />
-        </div>
-
-
-        <MainHeading text={"Transaction History"} />
-        <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
-
-        TODO: Add Transaction History Component
-
-    </div>
-)
+        </>
+    )
 }
 
 export default Fund
