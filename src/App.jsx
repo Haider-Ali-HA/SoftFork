@@ -34,6 +34,19 @@ import ForgetPasswordEmail from "./pages/common/ForgetPasswordEmail";
 import OTPVerification from "./pages/common/OTPVerification";
 import CreateNewPassword from "./pages/common/CreateNewPassword";
 import ResetPasswordLayout from "./layout/ResetPasswordLayout";
+
+// admin imports
+import AdminLayout from "./layout/adminLayout/AdminLayout";
+import Funds from "./pages/admin/Funds";
+import Dashboard from "./pages/admin/Dashboard";
+import Employees from "./pages/admin/Employees";
+import Projects from "./pages/admin/Projects";
+import ViewReports from "./pages/admin/ViewReports";
+import InviteEmployees from "./pages/admin/InviteEmployees";
+import CreateProject from "./pages/admin/CreateProject";
+import Chat from "./pages/admin/Chat";
+import Settings from "./pages/admin/Settings";
+import ShowAllProjects from "./pages/admin/ShowAllProjects";
 import CreateProject from "./pages/build/CreateProject";
 import KeyMetrics from "./pages/build/KeyMetrics";
 import ProposalsAndVoting from "./pages/build/ProposalsAndVoting";
@@ -41,7 +54,7 @@ import Spend from "./pages/spend/Spend";
 
 const App = () => {
   return (
-    <div className="w-full max-w-[1400px] mx-auto" >
+    <div className="w-full">
       <Routes>
         {/* Routes for Organization Login and Registration  start */}
         <Route path="/organization-auth" element={<OrganizationAuthLayout />}>
@@ -83,6 +96,7 @@ const App = () => {
           />
         </Route>
         {/* Routes for employee Login and Registration  end */}
+        {/* Routes for reset password  start */}
         <Route path="/reset-password" element={<ResetPasswordLayout />}>
           <Route
             path="security-question"
@@ -92,13 +106,27 @@ const App = () => {
           <Route path="otp-verification" element={<OTPVerification />} />
           <Route path="create-new-password" element={<CreateNewPassword />} />
         </Route>
-
+        {/* Routes for reset password  end */}
+        {/* Routes for admin dashboards  start */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="funds" element={<Funds />} />
+          <Route path="employees" element={<Employees />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="view-reports" element={<ViewReports />} />
+          <Route path="invite-employees" element={<InviteEmployees />} />
+          <Route path="create-project" element={<CreateProject />} />
+          <Route path="chat" element={<Chat />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="show-all-projects" element={<ShowAllProjects />} />
+        </Route>
+        {/* Routes for admin dashboards  end */}
 
         <Route path="/" element={<Homepage />} />
         <Route path="/fund" element={<Fund />} />
         <Route path="/discover-ideas" element={<DiscoverIdeas />} />
 
-        <Route path="/earn" >
+        <Route path="/earn">
           <Route path="" element={<Earn />} />
           <Route path="gigs-available" element={<GigsAvailable />} />
           <Route path="gig-details" element={<GigDetails />} />
@@ -108,11 +136,11 @@ const App = () => {
         <Route path="/build">
           <Route path="" element={<Build />} />
           <Route path="create-project" element={<CreateProject />} />
-          <Route path="key-metrics" element={<KeyMetrics/>} />
-          <Route path="proposals-and-voting" element={<ProposalsAndVoting/>} />
+          <Route path="key-metrics" element={<KeyMetrics />} />
+          <Route path="proposals-and-voting" element={<ProposalsAndVoting />} />
         </Route>
 
-        <Route path="/spend" element={<Spend/>} />
+        <Route path="/spend" element={<Spend />} />
 
       </Routes>
 
