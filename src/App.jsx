@@ -156,7 +156,7 @@ const App = () => {
       {/* <Build/> */}
 
       {/* <Homepage /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
