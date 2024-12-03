@@ -47,7 +47,6 @@ import CreateProject from "./pages/admin/CreateProject";
 import Chat from "./pages/admin/Chat";
 import Settings from "./pages/admin/Settings";
 import ShowAllProjects from "./pages/admin/ShowAllProjects";
-import CreateProject from "./pages/build/CreateProject";
 import KeyMetrics from "./pages/build/KeyMetrics";
 import ProposalsAndVoting from "./pages/build/ProposalsAndVoting";
 import Spend from "./pages/spend/Spend";
