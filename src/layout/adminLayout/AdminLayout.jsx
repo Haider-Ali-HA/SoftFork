@@ -12,7 +12,7 @@ const AdminLayout = () => {
   };
 
   return (
-    <div className="relative flex h-full w-full bg-[#db6f6f]">
+    <div className=" flex h-full w-full bg-[#43204A] ">
       {/* Overlay for mobile view */}
       {sidebarOpen && (
         <div
@@ -23,7 +23,7 @@ const AdminLayout = () => {
 
       {/* Sidebar */}
       <div
-        className={`relative overflow-auto  top-0 left-0 w-3/4 sm:w-72 h-full bg-[#43204A] transition-transform duration-300 transform z-50 ${
+        className={`overflow-auto  min-h-full top-0 left-0 w-3/4 sm:w-72 h-full bg-[#43204A] transition-transform duration-300 transform z-50 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:static lg:block`}
       >

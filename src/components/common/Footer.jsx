@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SoftForkLogo from "/SoftForkLogo.svg";
 import Linkedin from "../../assets/footer/linkedin.png";
 import Twitter from "../../assets/footer/twitter.png";
@@ -7,16 +7,29 @@ import Twoo from "../../assets/footer/twoo.png";
 import Model from "./Model";
 import ButtonFilled from "./ButtonFilled";
 import ButtonOutline from "./ButtonOutline";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [open, setOpen] = useState(false); // State for modal visibility
+  const [showFooter, setShowFooter] = useState(true);
+
+  const location = useLocation(); 
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  useEffect(() => {
+    if (location.pathname.startsWith("/admin")) {
+      setShowFooter(false);
+    } else {
+      setShowFooter(true);
+    }
+  }, []);
+
+
   return (
-    <div className="bg-white text-black py-20 px-7 lg:px-20 flex flex-col gap-10 font-manrope">
+    <div className={`bg-white text-black py-20 px-7 lg:px-20 flex flex-col gap-10 font-manrope ${!showFooter && "hidden"}`}>
       <hr className="border-[#E5E5EA]" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 xl:gap-0">
         <div className="flex flex-col gap-7">
