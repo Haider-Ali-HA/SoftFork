@@ -29,7 +29,7 @@ const Navbar2 = () => {
         },
         {
             name: 'Spend',
-            link: '#'
+            link: '/spend'
         },
         {
             name: 'Profile',

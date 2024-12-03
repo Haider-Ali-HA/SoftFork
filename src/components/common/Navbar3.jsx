@@ -22,7 +22,7 @@ const Navbar3 = ({showBtn=true}) => {
         },
         {
             name: 'Spend',
-            link: '#'
+            link: '/spend'
         },
         {
             name: 'Profile',

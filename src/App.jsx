@@ -34,6 +34,10 @@ import ForgetPasswordEmail from "./pages/common/ForgetPasswordEmail";
 import OTPVerification from "./pages/common/OTPVerification";
 import CreateNewPassword from "./pages/common/CreateNewPassword";
 import ResetPasswordLayout from "./layout/ResetPasswordLayout";
+import CreateProject from "./pages/build/CreateProject";
+import KeyMetrics from "./pages/build/KeyMetrics";
+import ProposalsAndVoting from "./pages/build/ProposalsAndVoting";
+import Spend from "./pages/spend/Spend";
 
 const App = () => {
   return (
@@ -101,7 +105,14 @@ const App = () => {
           <Route path="work-deliver" element={<WorkDeliver />} />
         </Route>
 
-        <Route path="/build" element={<Build />} />
+        <Route path="/build">
+          <Route path="" element={<Build />} />
+          <Route path="create-project" element={<CreateProject />} />
+          <Route path="key-metrics" element={<KeyMetrics/>} />
+          <Route path="proposals-and-voting" element={<ProposalsAndVoting/>} />
+        </Route>
+
+        <Route path="/spend" element={<Spend/>} />
 
       </Routes>
 

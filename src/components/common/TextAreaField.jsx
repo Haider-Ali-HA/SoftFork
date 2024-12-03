@@ -7,16 +7,20 @@ const TextareaField = ({
   value,
   onChange,
   rows = 4, // Default number of rows
+  wordCount = 0, // Word count passed from the parent
 }) => {
   return (
     <div className="relative w-full font-gilroy">
       {inputLabel && (
-        <label
-          className="text-xl font-semibold cursor-pointer"
-          htmlFor={inputLabel}
-        >
-          {inputLabel}
-        </label>
+        <div className="flex justify-between">
+          <label
+            className="text-xl font-semibold cursor-pointer"
+            htmlFor={inputLabel}
+          >
+            {inputLabel}
+          </label>
+          {wordCount!==null && <p>{wordCount}/500</p>}
+        </div>
       )}
       <textarea
         id={inputLabel}

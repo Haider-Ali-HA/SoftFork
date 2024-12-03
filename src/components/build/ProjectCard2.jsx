@@ -8,7 +8,7 @@ const ProjectCard2 = ({
     status,
     image,
     description,
-    funded
+    funded,
 }) => {
 
     return (
@@ -43,11 +43,13 @@ const ProjectCard2 = ({
                 <img src={image} alt="" className="w-full object-contain" />
                 <p className="mt-2 text-light text-sm">{description}</p>
                 <div className="flex justify-between mt-4 mb-1">
-                    <p>{funded}% Funded</p>
-                    <p className='text-right'>Complete...</p>
+                    <p className='font-semibold text-sm'> {funded}% Funded</p>
+                    <p className='text-right font-semibold mt-3 text-sm'>Complete...</p>
                 </div>
                 <ProgressBar funded={funded} color={"#7A70BA"} />
                 <ButtonFilled className='mt-2' text="Manage Project" />
+
+
 
             </div>
         </div>

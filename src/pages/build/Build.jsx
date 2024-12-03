@@ -12,6 +12,7 @@ import webDevelopement from "/images/webDevelopment.png"
 import ButtonOutline from '../../components/common/ButtonOutline'
 import ProjectCard2 from '../../components/build/ProjectCard2'
 import Navbar3 from '../../components/common/Navbar3'
+import { NavLink } from 'react-router-dom'
 
 const Build = () => {
 
@@ -54,7 +55,7 @@ const Build = () => {
                 {/* project cards 2 */}
 
                 <div className="w-[13%] mx-auto mt-8 mb-12">
-                    <ButtonOutline text="Create Project" showIcon />
+                    <NavLink to="/create-project"/>
                 </div>
 
                 <div className="grid grid-cols-1 p-2 gap-4 sm:grid-cols-2 md:grid-cols-4">
