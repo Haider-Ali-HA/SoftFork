@@ -2,7 +2,7 @@ import React from 'react'
 
 const Employees = () => {
   return (
-    <div className='mt-40'>
+    <div className=' min-h-screen'>
         employees
       
     </div>

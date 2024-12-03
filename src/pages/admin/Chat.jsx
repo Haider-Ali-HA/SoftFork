@@ -2,7 +2,7 @@ import React from 'react'
 
 const Chat = () => {
   return (
-    <div className='mt-40'>
+    <div className='min-h-screen'>
         Chats
       
     </div>

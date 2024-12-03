@@ -182,8 +182,8 @@ const ShowAllProjects = () => {
   ];
 
   return (
-    <>
-      <div className="flex flex-wrap gap-2 my-4">
+    <div className="min-h-screen">
+      <div className="flex flex-wrap gap-2 my-4 ">
         <button className="rounded-full cursor-pointer bg-blue-100 border-[#0F50AA] border w-20 text-[#0F50AA] py-2 text-center">
           All
         </button>
@@ -205,7 +205,7 @@ const ShowAllProjects = () => {
           <SingleProject key={index} {...project} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
