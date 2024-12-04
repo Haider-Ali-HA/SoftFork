@@ -43,13 +43,16 @@ import Employees from "./pages/admin/Employees";
 import Projects from "./pages/admin/Projects";
 import ViewReports from "./pages/admin/ViewReports";
 import InviteEmployees from "./pages/admin/InviteEmployees";
-import CreateProject from "./pages/admin/CreateProject";
 import Chat from "./pages/admin/Chat";
 import Settings from "./pages/admin/Settings";
 import ShowAllProjects from "./pages/admin/ShowAllProjects";
 import KeyMetrics from "./pages/build/KeyMetrics";
 import ProposalsAndVoting from "./pages/build/ProposalsAndVoting";
 import Spend from "./pages/spend/Spend";
+import Profile from "./pages/profile/Profile";
+import CreateProject from "./pages/build/CreateProject";
+import CreateMilestone from "./pages/build/CreateMilestone";
+import LeanCanvas from "./pages/build/LeanCanvas";
 
 const App = () => {
   return (
@@ -135,11 +138,14 @@ const App = () => {
         <Route path="/build">
           <Route path="" element={<Build />} />
           <Route path="create-project" element={<CreateProject />} />
+          <Route path="create-milestone" element={<CreateMilestone />} />
           <Route path="key-metrics" element={<KeyMetrics />} />
+          <Route path="lean-canvas" element={<LeanCanvas/>} />
           <Route path="proposals-and-voting" element={<ProposalsAndVoting />} />
         </Route>
 
         <Route path="/spend" element={<Spend />} />
+        <Route path="/profile" element={<Profile />} />
 
       </Routes>
 

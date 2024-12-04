@@ -54,9 +54,7 @@ const Build = () => {
 
                 {/* project cards 2 */}
 
-                <div className="w-[13%] mx-auto mt-8 mb-12">
-                    <NavLink to="/create-project"/>
-                </div>
+
 
                 <div className="grid grid-cols-1 p-2 gap-4 sm:grid-cols-2 md:grid-cols-4">
                     {
@@ -71,6 +69,12 @@ const Build = () => {
                             />
                         ))
                     }
+
+                </div>
+                <div className="w-[20%] mx-auto mt-4">
+                    <NavLink to="/build/create-project">
+                        <ButtonOutline className='' text="Create New Project" showIcon />
+                    </NavLink>
                 </div>
 
             </div>

@@ -30,12 +30,12 @@ const UploadOutline = ({ text, buttonText, onFileSelect }) => {
         style={{ display: "none" }}
         onChange={handleFileChange}
       />
-      <button
-        className="bg-white border border-primary text-primary font-gilroy mt-5 shadow-xl font-semibold text-base transition-all duration-200 md:text-lg hover:bg-primary hover:text-white  py-2 md:py-4 rounded-lg w-[11rem] md:w-[17rem]"
+      <div
+        className="bg-white border cursor-pointer border-primary text-primary font-gilroy mt-5  font-semibold text-base text-center transition-all duration-200 md:text-lg hover:bg-primary hover:text-white  py-2 md:py-4 rounded-lg w-[11rem] md:w-[17rem]"
         onClick={handleButtonClick}
       >
         {buttonText}
-      </button>
+      </div>
     </div>
   );
 };

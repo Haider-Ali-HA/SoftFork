@@ -33,7 +33,7 @@ const Navbar2 = () => {
         },
         {
             name: 'Profile',
-            link: '#'
+            link: '/profile'
         },
     ]
 

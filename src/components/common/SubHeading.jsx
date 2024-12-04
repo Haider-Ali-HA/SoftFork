@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SubHeading = ({ text }) => {
+const SubHeading = ({ text, className}) => {
 
     //find /n in text and replace it with <br/>
     text = text.split('\n').map((item, key) => {
@@ -8,7 +8,7 @@ const SubHeading = ({ text }) => {
     })
 
     return (
-        <h3 className="text-center text-secondary px-3 text-lg">
+        <h3 className={`text-center text-secondary px-3 text-lg ${className}`}>
             {text}
         </h3>
     )

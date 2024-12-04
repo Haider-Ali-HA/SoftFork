@@ -8,10 +8,12 @@ import DatePickerInput from '../../components/common/DatePickerInput'
 import ButtonOutline from '../../components/common/ButtonOutline'
 import ButtonFilled from '../../components/common/ButtonFilled'
 import TagInputField from '../../components/common/TagInputField'
+import { useNavigate } from 'react-router-dom'
 
 
 const CreateProject = () => {
     const [projectTags, setProjectTags] = useState([]);
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         ideaName: "",
@@ -38,7 +40,8 @@ const CreateProject = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ ...formData, skills });
+        console.log({ ...formData, projectTags });
+        navigate('/build/create-milestone');  
     }
 
  
@@ -134,6 +137,17 @@ const CreateProject = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
+
+                        <p>Helping Documents</p>
+                       <div className="w-[20%]">
+                       <div
+                            className={`bg-white border-primary hover:bg-primary hover:text-white border text-primary font-gilroy font-semibold text-sm md:text-md transition-all duration-200 py-1 md:py-2 rounded-lg w-full flex items-center justify-center cursor-pointer`}
+                        >
+                            <div className="flex items-center justify-center gap-3">
+                                <p>Insert Link</p>
+                            </div>
+                        </div>
+                       </div>
 
                         <ButtonFilled type="submit" text="Continue" />
 

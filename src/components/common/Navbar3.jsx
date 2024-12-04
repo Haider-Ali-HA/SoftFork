@@ -26,7 +26,7 @@ const Navbar3 = ({showBtn=true}) => {
         },
         {
             name: 'Profile',
-            link: '#'
+            link: '/profile'
         },
     ]
 
