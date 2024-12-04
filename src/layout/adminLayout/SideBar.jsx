@@ -28,7 +28,7 @@ const SideBar = ({ open, handleToggle }) => {
   };
 
   return (
-    <div className={` py-4 flex-1 overflow-auto  h-screen bg-[#43204A] z-50 `}>
+    <div className={` py-4 flex-1   h-screen bg-[#43204A] z-50 `}>
       {/* Logo Image */}
       <div className="flex w-full items-center  gap-3">
         <img
