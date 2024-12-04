@@ -8,7 +8,7 @@ const SubHeading = ({ text, className}) => {
     })
 
     return (
-        <h3 className={`text-center text-secondary px-3 text-lg ${className}`}>
+        <h3 className={`text-center text-secondary px-3 sm:text-lg ${className}`}>
             {text}
         </h3>
     )

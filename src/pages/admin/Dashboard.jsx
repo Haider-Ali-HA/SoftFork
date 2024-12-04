@@ -19,12 +19,13 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="md:p-8 bg-white min-h-full w-full mt-10 font-DMsans">
+    <div className="md:p-3 bg-white min-h-full w-full  font-DMsans">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row gap-4 ">
         {/* Sliders Section */}
-        <div className=" p-3 lg:p-6 rounded-lg shadow-2xl  shadow-[#eeeeee] h-full flex w-full lg:w-3/4 gap-2 sm:gap-0 justify-center flex-wrap">
-          <div className="flex flex-col justify-center  w-full sm:w-[21rem] ">
+        <div className="py-5 rounded-lg px-6 sm:px-0 shadow-[0px_0px_20px_#e2e2e2]   h-full flex w-full lg:w-3/4 gap-2 sm:gap-0 justify-center flex-wrap">
+          {/* slider  */}
+          <div className="flex flex-col justify-center   w-full sm:w-[21rem] ">
             <div className="mb-6">
               <label className="block text-lg font-medium mb-2">
                 Number of Employees
@@ -119,7 +120,7 @@ const Dashboard = () => {
             </div>
           </div>
           {/* Center section */}
-          <div className="flex flex-col justify-center  items-start gap-4 w-full sm:w-auto sm:px-10">
+          <div className="flex flex-col justify-start   items-start gap-4 w-full sm:w-auto sm:px-10">
             <span className="flex flex-col gap-5">
               <div className="flex flex-col items-start">
                 <div className="flex items-center gap-1">
@@ -128,27 +129,33 @@ const Dashboard = () => {
                     Productivity Savings
                   </h3>
                 </div>
-                <p className="text-2xl md:text-4xl font-bold text-primary">$0</p>
+                <p className="text-2xl md:text-4xl font-bold text-primary">
+                  $0
+                </p>
               </div>
               <div className="flex flex-col items-start">
                 <div className="flex items-center gap-1">
                   <VscCircleFilled className="text-primary" />
                   <h3 className="text-xl font-semibold">Turnover Savings</h3>
                 </div>
-                <p className="text-2xl md:text-4xl font-bold text-primary">$0</p>
+                <p className="text-2xl md:text-4xl font-bold text-primary">
+                  $0
+                </p>
               </div>
               <div className="flex flex-col items-start">
                 <div className="flex items-center gap-1">
                   <VscCircleFilled className="text-primary" />
                   <h3 className="text-xl font-semibold">Absenteeism Savings</h3>
                 </div>
-                <p className="text-2xl md:text-4xl font-bold text-primary">$0</p>
+                <p className="text-2xl md:text-4xl font-bold text-primary">
+                  $0
+                </p>
               </div>
             </span>
           </div>
 
           {/* Total saving */}
-          <div className="flex flex-col items-start md:items-center  h-full my-auto  w-full sm:w-1/3 justify-center">
+          <div className="flex flex-col justify-center   items-start gap-4 w-full sm:w-auto sm:px-10">
             <span>
               <h3 className="text-xl font-semibold">Total Savings</h3>
               <p className="text-2xl md:text-4xl font-bold text-primary">$0</p>
@@ -157,7 +164,7 @@ const Dashboard = () => {
         </div>
         {/* Right section */}
         <div className="px-3 flex flex-col gap-2">
-          <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee] flex flex-col items-start">
+          <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2] flex flex-col items-start">
             <h3 className="text-2xl font-medium mb-2 w-full">
               Total Number Of Employees
             </h3>
@@ -166,7 +173,7 @@ const Dashboard = () => {
               View All
             </button>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee] flex flex-col items-start">
+          <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2] flex flex-col items-start">
             <h3 className="text-2xl font-medium mb-2 w-full">
               Total Invites Pending
             </h3>
@@ -179,7 +186,7 @@ const Dashboard = () => {
       </div>
       {/* Bottom Section */}
       <div className="flex flex-wrap gap-4 mt-8">
-        <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee]  flex flex-col items-start">
+        <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2]  flex flex-col items-start">
           <h3 className="text-2xl font-medium mb-2 w-full">
             Total Funds Spent So Far
           </h3>
@@ -188,7 +195,7 @@ const Dashboard = () => {
             View All
           </button>
         </div>{" "}
-        <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee]  flex flex-col items-start">
+        <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2]  flex flex-col items-start">
           <h3 className="text-2xl font-medium mb-2 w-full">
             Total Active Members
           </h3>
@@ -197,7 +204,7 @@ const Dashboard = () => {
             View All
           </button>
         </div>{" "}
-        <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee]  flex flex-col items-start">
+        <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2]  flex flex-col items-start">
           <h3 className="text-2xl font-medium mb-2 w-full">
             Total Funds Allocated
           </h3>
@@ -206,7 +213,7 @@ const Dashboard = () => {
             View All
           </button>
         </div>{" "}
-        <div className="bg-white p-6 rounded-lg shadow-2xl shadow-[#eeeeee]  flex flex-col items-start">
+        <div className="bg-white p-6 rounded-lg shadow-[0px_0px_20px_#e2e2e2]  flex flex-col items-start">
           <h3 className="text-2xl font-medium mb-2 w-full">
             Total Number Of Projects Created
           </h3>

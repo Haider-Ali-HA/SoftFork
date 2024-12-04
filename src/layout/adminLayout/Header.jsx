@@ -9,7 +9,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-between  items-center pl-2  bg-white">
+    <div className="w-full flex justify-between  items-center pl-2   bg-white">
       <div className="">
         <h2 className="text-xl md:text-2xl    font-semibold text-[#151D48]">
           Admin Dashboard

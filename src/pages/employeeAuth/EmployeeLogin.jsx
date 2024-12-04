@@ -71,7 +71,7 @@ const EmployeeLogin = () => {
           Forgot Password?
         </Link>
 
-        <ButtonFilled text="Login" type="submit" />
+        <ButtonFilled text="Login" className="h-12 md:h-14 sm:text-xl" type="submit" />
 
         <div className="flex w-full gap-2 items-center justify-center">
           <p className="text-light ">No Account ?</p>

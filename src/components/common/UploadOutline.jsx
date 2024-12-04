@@ -18,7 +18,7 @@ const UploadOutline = ({ text, buttonText, onFileSelect }) => {
 
   return (
     <div className="w-full font-gilroy">
-      <h1 className="text-xl font-semibold cursor-pointer">{text}</h1>
+      <h1 className="sm:text-xl font-semibold cursor-pointer">{text}</h1>
       {fileName && (
         <p className="text-sm text-gray-500 mt-2">
           Selected File: <span className="font-medium">{fileName}</span>

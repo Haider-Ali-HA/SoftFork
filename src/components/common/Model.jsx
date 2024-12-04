@@ -2,8 +2,18 @@ import React from "react";
 import UpdateModel from "../../assets/model/model-tick.png";
 import CloseIcon from "@mui/icons-material/Close";
 import { Typography, Box, Modal } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const Model = ({ open, handleClose, title, content, buttonText }) => {
+const Model = ({
+  open,
+  handleClose,
+  title,
+  content,
+  buttonText,
+  identifier,
+  finalStep,
+}) => {
+  console.log("identifier", identifier);
   return (
     <div>
       <Modal
@@ -36,7 +46,9 @@ const Model = ({ open, handleClose, title, content, buttonText }) => {
             variant="h6"
             component="h2"
           >
-            {title}
+            {finalStep === "organizationSetup"
+              ? "Organization Setup"
+              : title}
           </Typography>
           <Typography
             className="!text-base md:!text-lg text-center !font-normal"
@@ -44,16 +56,59 @@ const Model = ({ open, handleClose, title, content, buttonText }) => {
             variant="h6"
             component="h2"
           >
-            {content}
+            {finalStep === "organizationSetup"
+              ? "Welcome! Let's get your team on board. You can invite employees via Slack or Rippling."
+              : content}
           </Typography>
 
-          <button
+          {finalStep === "organizationSetup" ? (
+            <div className="flex flex-wrap gap-4">
+              <button
+                className="bg-primary px-2 shadow-md text-white  h-12 text-base rounded-lg flex gap-2 items-center justify-center"
+                onClick={handleClose}
+                type="submit"
+              >
+                Invite Employee from Stack
+              </button>
+              <button
+                className="bg-primary px-2 shadow-md text-white  h-12 text-base rounded-lg flex gap-2 items-center justify-center"
+                onClick={handleClose}
+                type="submit"
+              >
+                Invite Employee from Riplling
+              </button>
+            </div>
+          ) : (
+            <>
+              {identifier === "finalTerms&conditions" ? (
+                <Link to="/organization-auth/final-terms&agreements">
+                  <button
+                    className="bg-primary shadow-md text-white w-52 h-12 text-base rounded-lg flex gap-2 items-center justify-center"
+                    onClick={handleClose}
+                    type="submit"
+                  >
+                    {buttonText}
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  className="bg-primary shadow-md text-white w-52 h-12 text-base rounded-lg flex gap-2 items-center justify-center"
+                  onClick={handleClose}
+                  type="submit"
+                >
+                  {buttonText}
+                </button>
+              )}
+            </>
+          )}
+
+          {/* <button
             className="bg-primary shadow-md text-white w-52 h-12 text-base rounded-lg flex gap-2 items-center justify-center"
             onClick={handleClose}
             type="submit"
           >
             {buttonText}
-          </button>
+          </button> */}
         </Box>
       </Modal>
     </div>

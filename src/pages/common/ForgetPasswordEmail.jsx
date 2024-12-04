@@ -51,7 +51,7 @@ const ForgetPasswordEmail = () => {
         />
 
         {/* Submit Button */}
-        <ButtonFilled text="Send Code" type="submit" />
+        <ButtonFilled text="Send Code" className="h-12 md:h-14 sm:text-xl" type="submit" />
       </form>
     </div>
   );

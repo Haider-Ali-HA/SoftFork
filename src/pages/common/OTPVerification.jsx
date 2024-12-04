@@ -78,7 +78,7 @@ const OTPVerification = () => {
         </div>
 
         {/* Verify Button */}
-        <ButtonFilled text="Verify" type="submit" />
+        <ButtonFilled text="Verify" className="h-12 md:h-14 sm:text-xl" type="submit" />
       </form>
     </div>
   );

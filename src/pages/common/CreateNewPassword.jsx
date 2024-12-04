@@ -76,7 +76,7 @@ const CreateNewPassword = () => {
         />
 
         {/* Submit Button */}
-        <ButtonFilled text="Reset Password" type="submit" />
+        <ButtonFilled text="Reset Password" className="h-12 md:h-14 sm:text-xl" type="submit" />
       </form>
 
       {/* Modal Component */}

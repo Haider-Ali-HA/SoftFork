@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Toolbar, Tooltip } from "@mui/material";
 import filterIcon from "../../../assets/datatable/Filter.png";
 import searchIcon from "../../../assets/datatable/Search.png";
-import Model from "../Model"; // Import the Model component
-
+import { BsThreeDots } from "react-icons/bs";
 export function EnhancedTableToolbar({
   onToggleFilter,
   isFilterOpen,
@@ -25,18 +24,25 @@ export function EnhancedTableToolbar({
 
   return (
     <>
-      <Toolbar className="flex flex-col   gap-5 mb-5 lg:flex-row">
-        <div className="flex gap-5 flex-wrap justify-center">
+      <Toolbar className="flex flex-col  justify-end   lg:flex-row">
+        <div className="flex gap-2 flex-wrap justify-end">
           <>
-            <Tooltip title="Filter list">
-              <button
-                className="border px-6 h-11 text-base rounded-lg flex gap-2 items-center justify-center border-gray-500"
-                onClick={onToggleFilter}
-              >
-                <img src={filterIcon} alt="filter icon" />
-                Filter
-              </button>
-            </Tooltip>
+            {identifier === "viewReportsTable" ? (
+              <></>
+            ) : (
+              <>
+                <Tooltip title="Filter list">
+                  <button
+                    className="border px-6 h-11 text-base rounded-lg flex gap-2 items-center justify-center border-gray-500"
+                    onClick={onToggleFilter}
+                  >
+                    <img src={filterIcon} alt="filter icon" />
+                    Filter
+                  </button>
+                </Tooltip>
+              </>
+            )}
+
             {isFilterOpen && (
               <div
                 ref={filterRef}
@@ -70,24 +76,26 @@ export function EnhancedTableToolbar({
               />
             </div>
           </Tooltip>
-          <div>
-            <button
-              className="bg-primary text-white w-36 h-11 text-base rounded-lg flex gap-2 items-center justify-center"
-              onClick={handleOpenModal} // Open modal on click
-            >
-              Send Invites
-            </button>
-          </div>
+          {identifier === "viewReportsTable" ? (
+            <>
+              {" "}
+              <BsThreeDots className="text-2xl cursor-pointer my-auto" />
+            </>
+          ) : (
+            <>
+              <Tooltip title="Filter list">
+                <button
+                  className="border px-6 h-11 text-base rounded-lg flex gap-2 items-center justify-center border-gray-500"
+                  onClick={onToggleFilter}
+                >
+                  <img src={filterIcon} alt="filter icon" />
+                  Filter
+                </button>
+              </Tooltip>
+            </>
+          )}
         </div>
       </Toolbar>
-      <Model
-        open={isModalOpen}
-        handleClose={handleCloseModal}
-        title="Invites Sent"
-        content="Your invite has been sent. Now you can get your team on board via Slack or Rippling"
-        buttonText="Okay"
-        identifier={identifier}
-      />
     </>
   );
 }

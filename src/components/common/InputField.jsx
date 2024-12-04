@@ -35,7 +35,7 @@ const InputField = ({
       {
         inputLabel && (
           <label
-            className=" text-xl font-semibold cursor-pointer"
+            className=" sm:text-xl font-semibold cursor-pointer"
             htmlFor={inputLabel}
           >
             {" "}

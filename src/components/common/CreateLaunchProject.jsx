@@ -87,9 +87,9 @@ const CreateLaunchProject = () => {
             </div>
 
 
-            <div className="w-[13%] mx-auto mt-8 mb-12">
+            {/* <div className="w-full mx-auto mt-8 mb-12">
                 <ButtonOutline text="Create Project" showIcon />
-            </div>
+            </div> */}
 
         </div>
     )

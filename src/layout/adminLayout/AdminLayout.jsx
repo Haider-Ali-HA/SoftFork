@@ -12,7 +12,7 @@ const AdminLayout = () => {
   };
 
   return (
-    <div className=" flex h-full w-full bg-[#43204A] ">
+    <div className="  flex min-h-screen w-full bg-[#43204A] ">
       {/* Overlay for mobile view */}
       {sidebarOpen && (
         <div
@@ -22,18 +22,35 @@ const AdminLayout = () => {
       )}
 
       {/* Sidebar */}
-      <div
+      {/* <div
         className={`overflow-auto  min-h-full top-0 left-0 w-3/4 sm:w-72 h-full bg-[#43204A] transition-transform duration-300 transform z-50 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:static lg:block`}
       >
-        <SideBar open={sidebarOpen} handleToggle={handleToggle} />
+        {sidebarOpen ? (
+          <SideBar open={sidebarOpen} handleToggle={handleToggle} />
+        ) : (
+          <SideBar />
+        )}
+      </div> */}
+
+      {/* Sidebar - adjust z-index so it appears above the overlay */}
+      <div
+        className={`fixed top-0 overflow-auto left-0 w-3/4 sm:w-72 h-full bg-[#43204A] transition-transform duration-300 transform z-50 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0 lg:static lg:block`}
+      >
+        {sidebarOpen ? (
+          <SideBar open={sidebarOpen} handleToggle={handleToggle} />
+        ) : (
+          <SideBar />
+        )}
       </div>
 
       {/* Main content */}
-      <div className="flex flex-col flex-1 h-full bg-white">
+      <div className="flex flex-col w-full min-h-screen bg-white">
         {/* Header / Navbar */}
-        <div className="flex items-center bg-white py-3  shadow-2xl shadow-[#eeeeee] px-4">
+        <div className="flex items-center  py-3  shadow-lg shadow-[#eeeded] mb-1 px-4">
           <GiHamburgerMenu
             onClick={handleToggle}
             className={`text-gray-800 text-2xl cursor-pointer lg:hidden ${
@@ -44,7 +61,7 @@ const AdminLayout = () => {
         </div>
 
         {/* Main content area */}
-        <div className="flex-grow   p-4 ">
+        <div className="flex-grow p-4  mt-5">
           <Outlet />
         </div>
       </div>
