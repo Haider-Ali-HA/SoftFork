@@ -14,7 +14,7 @@ const TextareaField = ({
       {inputLabel && (
         <div className="flex justify-between">
           <label
-            className="text-xl font-semibold cursor-pointer"
+            className="sm:text-xl font-semibold cursor-pointer"
             htmlFor={inputLabel}
           >
             {inputLabel}

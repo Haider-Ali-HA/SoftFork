@@ -18,7 +18,7 @@ const UploadFilled = ({ text, buttonText, onFileSelect }) => {
 
   return (
     <div className="w-full font-gilroy">
-      <h1 className="text-xl font-semibold cursor-pointer">{text}</h1>
+      <h1 className="sm:text-xl font-semibold cursor-pointer">{text}</h1>
       {fileName && (
         <p className="text-sm text-gray-500 mt-2">
           Selected File: <span className="font-medium">{fileName}</span>
@@ -31,7 +31,7 @@ const UploadFilled = ({ text, buttonText, onFileSelect }) => {
         onChange={handleFileChange}
       />
       <button
-        className="bg-primary font-gilroy mt-5 shadow-xl font-semibold text-base transition-all duration-200 md:text-lg hover:opacity-90 text-white py-2 md:py-4 rounded-lg w-[11rem] md:w-[17rem]"
+        className="bg-primary font-gilroy mt-5 shadow-xl font-semibold text-base transition-all duration-200 md:text-lg hover:opacity-90 text-white py-2 md:py-3 rounded-lg w-[11rem] md:w-[13rem]"
         onClick={handleButtonClick}
       >
         {buttonText}

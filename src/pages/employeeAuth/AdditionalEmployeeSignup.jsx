@@ -111,7 +111,7 @@ const AdditionalEmployeeSignup = () => {
         {skillsError && <p className="text-red-500 mt-2">{skillsError}</p>}
 
         {/* Submit Button */}
-        <ButtonFilled text="Next" type="submit" />
+        <ButtonFilled text="Next" className="h-12 md:h-14 sm:text-xl" type="submit" />
       </form>
       <Link
         to="/employee-auth/security-question"

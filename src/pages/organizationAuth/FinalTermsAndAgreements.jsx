@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import SecondHeading from "../../components/common/SecondHeading";
 import ButtonFilled from "../../components/common/ButtonFilled";
 import { useNavigate } from "react-router-dom";
+import Model from "../../components/common/Model"; // Import the Model component
 
-const TermsAndAgreements = () => {
+
+const FinalTermsAndAgreements = () => {
   const [isChecked, setIsChecked] = useState(false); // State for checkbox
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
   const navigate = useNavigate();
 
   // Handle checkbox state
@@ -12,11 +15,16 @@ const TermsAndAgreements = () => {
     setIsChecked(e.target.checked);
   };
 
+  // Handle modal close
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   // Handle "Create Account" button click
   const handleCreateAccount = () => {
     if (isChecked) {
       console.log("Terms and conditions accepted");
-      navigate("/organization-auth/import-employees");
+      setIsModalOpen(true); // Show the modal
     } else {
       alert("Please agree to the terms and conditions before proceeding.");
     }
@@ -84,14 +92,26 @@ const TermsAndAgreements = () => {
           className="text-light text-lg cursor-pointer"
           onClick={() => setIsChecked(!isChecked)}
         >
-          Agree to all terms and conditions
+          GDPR/compliance with data usage policies
         </p>
       </div>
       <div className="w-full md:w-2/4">
-        <ButtonFilled text="Create Account" className="h-12 md:h-14 sm:text-xl" onClick={handleCreateAccount} />
+        <ButtonFilled
+          text="Create Account"
+          className="h-12 md:h-14 sm:text-xl"
+          onClick={handleCreateAccount}
+        />
       </div>
+      <Model
+        open={isModalOpen}
+        handleClose={handleCloseModal}
+        title="Invites Sent"
+        content="Your invite has been sent. Now you can get your team on board via Slack or Rippling"
+        buttonText="Okay"
+        finalStep="organizationSetup"
+      />
     </div>
   );
 };
 
-export default TermsAndAgreements;
+export default FinalTermsAndAgreements;

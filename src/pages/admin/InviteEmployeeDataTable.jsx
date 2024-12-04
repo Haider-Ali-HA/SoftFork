@@ -13,7 +13,7 @@ const columns = [
     headerName: "Action",
     width: 100,
     renderCell: () => (
-      <div className="flex items-center h-full">
+      <div className="flex  items-center h-full">
         <BiDotsVerticalRounded className="text-xl cursor-pointer" />
       </div>
     ), // Vertical dots for actions
@@ -129,19 +129,12 @@ const rows = [
   },
 ];
 
-const OrganizationInvites = () => {
+const InviteEmployeeDataTable = () => {
   return (
-    <div className="mt-20 px-10 flex items-center justify-center">
-      <DataTable
-        identifier="finalTerms&conditions"
-        columns={columns}
-        rows={rows.map(row => ({
-          ...row,
-          action: <BiDotsVerticalRounded className="text-xl cursor-pointer" />
-        }))}
-      />
+    <div className="  flex items-center justify-center">
+      <DataTable columns={columns} rows={rows} />
     </div>
   );
 };
 
-export default OrganizationInvites;
+export default InviteEmployeeDataTable;

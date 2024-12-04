@@ -5,7 +5,7 @@ import { PiDotsThreeBold } from "react-icons/pi";
 const SingleProject = ({ title, user, tags, tasks, funding, progress }) => {
   return (
     <div>
-      <div className=" mx-auto bg-white shadow-lg w-80 rounded-lg p-4">
+      <div className=" mx-auto bg-white shadow-[0px_0px_15px_#e2e2e2] w-80 rounded-lg p-4">
         {/* Title */}
         <div className="flex w-full justify-between items-center">
           <h3 className="text-gray-800  text-lg font-semibold">{title}</h3>

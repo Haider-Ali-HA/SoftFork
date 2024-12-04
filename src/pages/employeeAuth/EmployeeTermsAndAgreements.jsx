@@ -106,7 +106,7 @@ const EmployeeTermsAndAgreements = () => {
         </div>
       </div>
       <div className="w-full md:w-2/4">
-        <ButtonFilled text="Create Account" onClick={handleCreateAccount} />
+        <ButtonFilled text="Create Account" className="h-12 md:h-14 sm:text-xl" onClick={handleCreateAccount} />
       </div>
       <Model
         open={isModalOpen}

@@ -130,7 +130,7 @@ const AdminContactDetails = () => {
           />
         </div>
 
-        <ButtonFilled text="Next" type="submit" />
+        <ButtonFilled text="Next" className="h-12 md:h-14 sm:text-xl" type="submit" />
       </form>
       <Link
         to="/organization-auth/funding-details"

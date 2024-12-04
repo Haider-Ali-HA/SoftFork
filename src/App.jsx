@@ -37,11 +37,11 @@ import ResetPasswordLayout from "./layout/ResetPasswordLayout";
 
 // admin imports
 import AdminLayout from "./layout/adminLayout/AdminLayout";
-import Funds from "./pages/admin/Funds";
+import AdminFunds from "./pages/admin/AdminFunds";
 import Dashboard from "./pages/admin/Dashboard";
 import Employees from "./pages/admin/Employees";
 import Projects from "./pages/admin/Projects";
-import ViewReports from "./pages/admin/ViewReports";
+import ViewAllReports from "./pages/admin/ViewAllReports";
 import InviteEmployees from "./pages/admin/InviteEmployees";
 import CreateProject from "./pages/admin/CreateProject";
 import Chat from "./pages/admin/Chat";
@@ -50,6 +50,11 @@ import ShowAllProjects from "./pages/admin/ShowAllProjects";
 import KeyMetrics from "./pages/build/KeyMetrics";
 import ProposalsAndVoting from "./pages/build/ProposalsAndVoting";
 import Spend from "./pages/spend/Spend";
+import InviteEmployeeDataTable from "./pages/admin/InviteEmployeeDataTable";
+import CreateSingleProject from "./pages/admin/CreateSingleProject";
+import FundsTable from "./pages/admin/FundsTable";
+import ViewSingleReport from "./pages/admin/ViewSingleReport";
+import FinalTermsAndAgreements from "./pages/organizationAuth/FinalTermsAndAgreements";
 
 const App = () => {
   return (
@@ -69,7 +74,14 @@ const App = () => {
           />
           <Route path="funding-details" element={<FundingDetails />} />
           <Route path="terms&agreements" element={<TermsAndAgreements />} />
-          <Route path="import-employees" element={<ImportEmployees />} />
+          <Route
+            path="final-terms&agreements"
+            element={<FinalTermsAndAgreements />}
+          />
+          <Route
+            path="import-employees"
+            element={<ImportEmployees address="importEmployee" />}
+          />
           <Route
             path="organization-invites"
             element={<OrganizationInvites />}
@@ -109,15 +121,25 @@ const App = () => {
         {/* Routes for admin dashboards  start */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="funds" element={<Funds />} />
+          <Route path="funds" element={<AdminFunds />} />
           <Route path="employees" element={<Employees />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="view-reports" element={<ViewReports />} />
+          <Route path="view-reports" element={<ViewAllReports />} />
+          <Route path="view-single-reports" element={<ViewSingleReport />} />
           <Route path="invite-employees" element={<InviteEmployees />} />
           <Route path="create-project" element={<CreateProject />} />
           <Route path="chat" element={<Chat />} />
           <Route path="settings" element={<Settings />} />
           <Route path="show-all-projects" element={<ShowAllProjects />} />
+          <Route path="funds-table" element={<FundsTable />} />
+          <Route
+            path="invite-employees-table"
+            element={<InviteEmployeeDataTable />}
+          />
+          <Route
+            path="create-single-project"
+            element={<CreateSingleProject />}
+          />
         </Route>
         {/* Routes for admin dashboards  end */}
 
@@ -140,7 +162,6 @@ const App = () => {
         </Route>
 
         <Route path="/spend" element={<Spend />} />
-
       </Routes>
 
       {/* <Navbar3/> */}

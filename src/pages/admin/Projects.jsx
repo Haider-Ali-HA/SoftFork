@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
-    <div className="md:p-5 font-gilroy min-h-screen">
-      <div className="flex flex-col items-center py rounded-xl shadow-2xl shadow-[#d6d5d5]  justify-center gap-5 h-[80vh]">
+    <div className="font-gilroy min-h-full">
+      <div className="flex flex-col items-center py bg-white rounded-xl shadow-[0px_0px_20px_#e2e2e2]  justify-center gap-5 h-[80vh]">
         <MainHeading text="No Project Found" />
         <SubHeading text="This list is currently empty. Click the 'Create a New Project' button to start a new project." />
         <Link to="/admin/show-all-projects">
-          <ButtonFilled text="Create a New Project" />
+          <ButtonFilled
+            className=" h-12 md:h-14 sm:text-xl"
+            text="Create a New Project"
+          />
         </Link>
       </div>
     </div>

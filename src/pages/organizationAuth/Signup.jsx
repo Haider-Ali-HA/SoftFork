@@ -57,7 +57,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        <div className="flex gap-5 flex-col md:flex-row">
+        <div className="flex gap-5 flex-col w-full md:flex-row">
           <InputField
             typeText="text"
             placeholderText="First name"
@@ -87,7 +87,7 @@ const Signup = () => {
           onChange={handleChange}
         />
 
-        <ButtonFilled text="Register" type="submit" />
+        <ButtonFilled className="h-12 md:h-14 sm:text-xl" text="Register" type="submit" />
 
         <div className="flex w-full gap-2 items-center justify-center">
           <p className="text-light ">Have an Account ?</p>

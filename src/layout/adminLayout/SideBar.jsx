@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import image1 from "../../assets/sidebar/dashboard.png";
 import image2 from "../../assets/sidebar/funds.png";
 import image3 from "../../assets/sidebar/employees.png";
@@ -15,13 +15,20 @@ import { FiSettings } from "react-icons/fi";
 
 const SideBar = ({ open, handleToggle }) => {
   const [isAccountSettingsActive, setIsAccountSettingsActive] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/admin/invite-employees-table") {
+      setIsAccountSettingsActive(true);
+    }
+  }, [location.pathname]);
 
   const handleAccountClick = (isActive) => {
     setIsAccountSettingsActive(isActive);
   };
 
   return (
-    <div className={` py-4 flex-1  h-full bg-[#43204A] z-50 `}>
+    <div className={` py-4 flex-1 overflow-auto  h-screen bg-[#43204A] z-50 `}>
       {/* Logo Image */}
       <div className="flex w-full items-center  gap-3">
         <img
@@ -69,7 +76,9 @@ const SideBar = ({ open, handleToggle }) => {
           <div
             onClick={() => setIsAccountSettingsActive(false)}
             className={`flex items-center px-4 py-4 my-2 w-full transition-colors duration-300 text-white ${
-              isActive ? "bg-gray-300 bg-opacity-25" : ""
+              isActive || location.pathname === "/admin/funds-table"
+                ? "bg-gray-300 bg-opacity-25"
+                : ""
             }`}
           >
             <img
@@ -132,7 +141,9 @@ const SideBar = ({ open, handleToggle }) => {
           <div
             onClick={() => setIsAccountSettingsActive(false)}
             className={`flex items-center px-4 py-4 my-2 w-full transition-colors duration-300 text-white ${
-              isActive ? "bg-gray-300 bg-opacity-25" : ""
+              isActive || location.pathname === "/admin/view-single-reports"
+                ? "bg-gray-300 bg-opacity-25"
+                : ""
             }`}
           >
             <img
@@ -146,35 +157,40 @@ const SideBar = ({ open, handleToggle }) => {
           </div>
         )}
       </NavLink>
-
       {/* Invite Employees Link */}
       <NavLink onClick={handleToggle} to="/admin/invite-employees">
         {({ isActive }) => (
           <div
             onClick={() => setIsAccountSettingsActive(false)}
             className={`flex items-center px-4 py-4 my-2 w-full transition-colors duration-300 text-white ${
-              isActive ? "bg-gray-300 bg-opacity-25" : ""
+              isActive || location.pathname === "/admin/invite-employees-table"
+                ? "bg-gray-300 bg-opacity-25"
+                : ""
             }`}
           >
             <img
               src={image6}
               alt="Invite Employees"
               className={`w-5 h-5 ${
-                isActive ? "filter brightness-0 invert" : ""
+                isActive ||
+                location.pathname === "/admin/invite-employees-table"
+                  ? "filter brightness-0 invert"
+                  : ""
               }`}
             />
             <h1 className="ml-3">Invite Employees</h1>
           </div>
         )}
       </NavLink>
-
       {/* Create Project Link */}
       <NavLink onClick={handleToggle} to="/admin/create-project">
         {({ isActive }) => (
           <div
             onClick={() => setIsAccountSettingsActive(false)}
             className={`flex items-center px-4 py-4 my-2 w-full transition-colors duration-300 text-white ${
-              isActive ? "bg-gray-300 bg-opacity-25" : ""
+              isActive || location.pathname === "/admin/create-single-project"
+                ? "bg-gray-300 bg-opacity-25"
+                : ""
             }`}
           >
             <img
