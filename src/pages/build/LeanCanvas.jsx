@@ -202,7 +202,7 @@ const LeanCanvas = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-2 w-full flex items-center justify-center mt-8">
+                <div className="gap-2 w-full flex items-center justify-center mt-8">
                     <div>
                         <ButtonOutline className='px-8' text={"Achived Lean Canvas"} />
                     </div>
