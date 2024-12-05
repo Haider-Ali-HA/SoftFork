@@ -59,6 +59,7 @@ import CreateProject from "./pages/build/CreateProject";
 import AdminCreateProject from "./pages/admin/AdminCreateProject";
 import CreateMilestone from "./pages/build/CreateMilestone";
 import LeanCanvas from "./pages/build/LeanCanvas";
+import AllTablesTesting from "./pages/AllTablesTesting";
 
 const App = () => {
   return (
@@ -169,6 +170,7 @@ const App = () => {
 
         <Route path="/spend" element={<Spend />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/testing" element={<AllTablesTesting />} />
       </Routes>
 
       {/* <Navbar3/> */}
