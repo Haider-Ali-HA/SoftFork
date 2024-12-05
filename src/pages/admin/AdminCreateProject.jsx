@@ -3,7 +3,7 @@ import CreateLaunchProject from "../../components/common/CreateLaunchProject";
 import ButtonOutline from "../../components/common/ButtonOutline";
 import { Link } from "react-router-dom";
 
-const CreateProject = () => {
+const AdminCreateProject = () => {
   return (
     <div className="min-h-full  bg-white shadow-[0px_0px_20px_#e2e2e2] p-5 py-20">
       <CreateLaunchProject />
@@ -17,4 +17,4 @@ const CreateProject = () => {
   );
 };
 
-export default CreateProject;
+export default AdminCreateProject;

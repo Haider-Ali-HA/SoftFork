@@ -56,6 +56,7 @@ import ViewSingleReport from "./pages/admin/ViewSingleReport";
 import FinalTermsAndAgreements from "./pages/organizationAuth/FinalTermsAndAgreements";
 import Profile from "./pages/profile/Profile";
 import CreateProject from "./pages/build/CreateProject";
+import AdminCreateProject from "./pages/admin/AdminCreateProject";
 import CreateMilestone from "./pages/build/CreateMilestone";
 import LeanCanvas from "./pages/build/LeanCanvas";
 
@@ -130,7 +131,7 @@ const App = () => {
           <Route path="view-reports" element={<ViewAllReports />} />
           <Route path="view-single-reports" element={<ViewSingleReport />} />
           <Route path="invite-employees" element={<InviteEmployees />} />
-          <Route path="create-project" element={<CreateProject />} />
+          <Route path="create-project" element={<AdminCreateProject />} />
           <Route path="chat" element={<Chat />} />
           <Route path="settings" element={<Settings />} />
           <Route path="show-all-projects" element={<ShowAllProjects />} />
@@ -168,7 +169,6 @@ const App = () => {
 
         <Route path="/spend" element={<Spend />} />
         <Route path="/profile" element={<Profile />} />
-
       </Routes>
 
       {/* <Navbar3/> */}
