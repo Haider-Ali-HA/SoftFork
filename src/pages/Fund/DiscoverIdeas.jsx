@@ -208,6 +208,7 @@ const DiscoverIdeas = () => {
                         profilePhoto={project.profilePhoto}
                         showSeries={true}
                         seriesName={project.seriesName}
+                        linkTo="/fund/discover-ideas/project-details"
                     />
                 ))}
             </div>

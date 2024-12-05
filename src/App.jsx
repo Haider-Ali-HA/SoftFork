@@ -59,6 +59,9 @@ import CreateProject from "./pages/build/CreateProject";
 import AdminCreateProject from "./pages/admin/AdminCreateProject";
 import CreateMilestone from "./pages/build/CreateMilestone";
 import LeanCanvas from "./pages/build/LeanCanvas";
+import ProjectDetailsBuild from "./pages/build/ProjectDetailsBuild";
+import ProjectDetailsFund from "./pages/Fund/ProjectDetailsFund";
+import ProjectDetailsBuild3 from "./pages/Fund/ProjectDetailsBuild3";
 
 const App = () => {
   return (
@@ -150,6 +153,7 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/fund" element={<Fund />} />
         <Route path="/discover-ideas" element={<DiscoverIdeas />} />
+        <Route path="/fund/discover-ideas/project-details" element={<ProjectDetailsFund />} />
 
         <Route path="/earn">
           <Route path="" element={<Earn />} />
@@ -164,6 +168,8 @@ const App = () => {
           <Route path="create-milestone" element={<CreateMilestone />} />
           <Route path="key-metrics" element={<KeyMetrics />} />
           <Route path="lean-canvas" element={<LeanCanvas />} />
+          <Route path="project-details" element={<ProjectDetailsBuild/>} />
+          <Route path="project-details2" element={<ProjectDetailsBuild3/>} />
           <Route path="proposals-and-voting" element={<ProposalsAndVoting />} />
         </Route>
 

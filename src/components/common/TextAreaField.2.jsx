@@ -10,7 +10,9 @@ const TextareaField2 = ({
     showWordCount = true, // Word count passed from the parent
     maxWordCount=500,
     lableStyling="",
-    textStyling=""
+    textStyling="",
+    disabled=false,
+    outline=true
 }) => {
     const [wordCount, setWordCount] = useState(0);
     useEffect(() => {
@@ -34,13 +36,14 @@ const TextareaField2 = ({
             )}
             <textarea
                 id={inputLabel}
-                className={`w-full mt-2 border border-[#ADADAD] rounded-lg placeholder:text-[#808080] px-4 py-3 md:py-4 outline-none ${textStyling}`}
+                className={`w-full mt-2 border rounded-lg placeholder:text-[#808080] px-4 py-3 md:py-4 outline-none ${textStyling} ${!outline && 'border-none resize-none'}`}
                 placeholder={placeholderText}
                 required
                 name={name}
                 value={value || ""}
                 onChange={onChange || (() => { })}
                 rows={rows}
+                disabled={disabled}
             />
         </div>
     );

@@ -6,6 +6,7 @@ import clock from "/icons/clock.png"
 import TextareaField2 from '../../components/common/TextAreaField.2'
 import ButtonOutline from '../../components/common/ButtonOutline'
 import ButtonFilled from '../../components/common/ButtonFilled'
+import { useNavigate } from 'react-router-dom'
 
 const LeanCanvas = () => {
     const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const LeanCanvas = () => {
         costStructure: "",
         revenueStreams: ""
     })
+    const navigate = useNavigate();
 
     // Handle input changes
     const handleInputChange = (e) => {
@@ -34,6 +36,7 @@ const LeanCanvas = () => {
 
     const handleSubmit = () => {
         e.preventDefault();
+        navigate("/build/project-details")
         console.log(formData);
     }
 

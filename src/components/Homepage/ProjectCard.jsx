@@ -3,7 +3,7 @@ import ProgressBar from "../common/ProgressBar";
 import ButtonFilled from "../common/ButtonFilled";
 import ProfileDetail from "../common/ProfileDetail";
 import { SlOptions } from "react-icons/sl";
-
+import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({
   title,
@@ -16,11 +16,20 @@ const ProjectCard = ({
   barColor,
   profilePhoto,
   showSeries = false,
-  seriesName
+  seriesName,
+  linkTo
 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (linkTo) {
+      navigate(`${linkTo}`)
+    }
+  }
+
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden relative">
-      <SlOptions  className="absolute top-2 right-2 cursor-pointer" color="#9B9B9B"/>
+      <SlOptions className="absolute top-2 right-2 cursor-pointer" color="#9B9B9B" />
       <div className="p-1">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         {
@@ -48,7 +57,7 @@ const ProjectCard = ({
           </div>
         </div>
         <ProgressBar fill={funded} color={barColor} />
-        <div className="w-full mt-4">
+        <div onClick={handleClick} className="w-full mt-4">
           <ButtonFilled text="Fund a Project" />
         </div>
       </div>
