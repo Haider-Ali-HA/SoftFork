@@ -15,6 +15,8 @@ import videoImg from "/images/video.png"
 import playIcon from "/images/playIcon.png"
 import banner from "/images/banner.png"
 import whiteOverlay from "/images/whiteOverlay.png"
+import HistoryBackerTable from './HistoryBackerTable'
+import Comments from '../../components/common/Comments'
 
 const ProjectDetailsFund = () => {
 
@@ -150,6 +152,8 @@ const ProjectDetailsFund = () => {
                                             <p className=' mb-4 text-[#5A5A5A] text-xs sm:text-sm'>{milestone.completionDeliverable}</p>
 
                                             <h2 className=" mb-4 text-lg text-[#121212] font-bold">Queries from Backers:</h2>
+
+                                            <Comments/>
 
                                             <div className="relative w-full font-gilroy">
                                                 <input
@@ -430,7 +434,7 @@ const ProjectDetailsFund = () => {
                         </li>
                     </ul>
 
-                    <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">History of Backer Transactions</h2>
+                    <HistoryBackerTable/>
 
                 </div>
 

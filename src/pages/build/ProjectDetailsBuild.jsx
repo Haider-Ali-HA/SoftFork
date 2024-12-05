@@ -17,6 +17,7 @@ import banner from "/images/banner.png"
 import whiteOverlay from "/images/whiteOverlay.png"
 import { useNavigate } from 'react-router-dom'
 import IncreaseContributionModel from './IncreaseContributionModel'
+import Comments from '../../components/common/Comments'
 
 const ProjectDetailsBuild = () => {
     const [openInceraseContribution, setOpenInceraseContribution] = useState(false)
@@ -161,6 +162,7 @@ const ProjectDetailsBuild = () => {
                                             <p className=' mb-4 text-[#5A5A5A] text-xs sm:text-sm'>{milestone.completionDeliverable}</p>
 
                                             <h2 className=" mb-4 text-lg text-[#121212] font-bold">Queries from Backers:</h2>
+                                            <Comments/>
 
                                             <div className="relative w-full font-gilroy">
                                                 <input

@@ -7,6 +7,7 @@ import ButtonOutline from '../../components/common/ButtonOutline';
 import FundedCard from '../../components/Homepage/FundedCard';
 import Navbar3 from '../../components/common/Navbar3';
 import { NavLink } from 'react-router-dom';
+import TransactionHistoryTable from './TransactionHistoryTable';
 
 const Fund = () => {
 
@@ -232,7 +233,7 @@ const Fund = () => {
                 <MainHeading text={"Transaction History"} />
                 <SubHeading text={`Why kept very ever home mrs. Considered \nsympathize ten uncommonly.`} />
 
-                TODO: Add Transaction History Component
+                <TransactionHistoryTable/>
 
             </div>
         </>

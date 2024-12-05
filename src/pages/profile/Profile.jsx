@@ -49,7 +49,7 @@ const Profile = () => {
     return (
         <>
             <Navbar3 />
-            <div className='w-full px-4'>
+            <div className='w-full px-6'>
                 <div className="mt-8"></div>
                 <MainHeading text={"Profile Setup"} />
                 <SubHeading text={`Bring your idea to life and connect with \nbackers ready to fund your vision.`} />

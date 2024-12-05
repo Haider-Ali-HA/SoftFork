@@ -89,20 +89,37 @@ const DataTable = ({
             </>
           ) : (
             <>
-              <div className="flex flex-wrap gap-2 my-4">
-                <button className="rounded-full cursor-pointer bg-blue-100 border-[#0F50AA] border w-20 text-[#0F50AA] py-2 text-center">
-                  All
-                </button>
-                <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-20 text-[#4b4b4b] py-2 text-center">
-                  Active
-                </button>
-                <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
-                  Vacated
-                </button>
-                <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
-                  Ongoing
-                </button>
-              </div>
+              {identifier === "earnTable" ? (
+                <div className="flex flex-wrap gap-2 my-4">
+                  <button className="rounded-full cursor-pointer bg-blue-100 border-[#0F50AA] border w-20 text-[#0F50AA] py-2 text-center">
+                    All
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
+                    Approved
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
+                    Pending
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
+                    Rejected
+                  </button>
+                </div>
+              ) : (
+                <div className="flex flex-wrap gap-2 my-4">
+                  <button className="rounded-full cursor-pointer bg-blue-100 border-[#0F50AA] border w-20 text-[#0F50AA] py-2 text-center">
+                    All
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-20 text-[#4b4b4b] py-2 text-center">
+                    Active
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
+                    Vacated
+                  </button>
+                  <button className="rounded-full cursor-pointer bg-white border-gray-400 border w-24 text-[#4b4b4b] py-2 text-center">
+                    Ongoing
+                  </button>
+                </div>
+              )}
             </>
           )}
         </Box>
@@ -233,6 +250,45 @@ const DataTable = ({
                       }
                     }
 
+                    // Custom rendering for "earnTable" identifier
+                    if (identifier === "earnTable") {
+                      // Handle "status" column with color classes
+                      if (headCell.id === "status") {
+                        return (
+                          <TableCell key={headCell.id} className="!font-medium">
+                            <span
+                              className={`
+                    ${row[headCell.id] === "Approved" ? "text-green-500" : ""}
+                    ${row[headCell.id] === "Pending" ? "text-orange-500" : ""}
+                    ${row[headCell.id] === "Rejected" ? "text-red-500" : ""}
+                  `}
+                            >
+                              {row[headCell.id]}
+                            </span>
+                          </TableCell>
+                        );
+                      }
+
+                      // Handle "action" column with button
+                      if (headCell.id === "action") {
+                        return (
+                          <TableCell key={headCell.id} className="!font-medium">
+                            <button className="bg-primary text-white py-2 px-4 rounded hover:bg-opacity-80">
+                              View Task
+                            </button>
+                          </TableCell>
+                        );
+                      }
+                      return (
+                        <TableCell
+                          key={headCell.id}
+                          className="text-[#05004E] !font-medium"
+                        >
+                          {row[headCell.id]}
+                        </TableCell>
+                      );
+                    }
+
                     if (headCell.id === "projectName") {
                       return (
                         <TableCell key={headCell.id} className="!font-medium">
@@ -252,6 +308,7 @@ const DataTable = ({
                       );
                     }
 
+                    // If the identifier is viewReportsTable
                     if (headCell.id === "reports") {
                       return (
                         <TableCell
@@ -272,9 +329,10 @@ const DataTable = ({
                         key={headCell.id}
                         className={`text-[#05004E] !font-medium ${
                           headCell.id === "status"
-                            ? (identifier === "viewReportsTable" &&
-                                row[headCell.id] === "Live") ||
-                              row[headCell.id] === "Fund Completed"
+                            ? // Logic for viewReportsTable
+                              identifier === "viewReportsTable" &&
+                              (row[headCell.id] === "Live" ||
+                                row[headCell.id] === "Fund Completed")
                               ? "!text-green-500"
                               : row[headCell.id] === "Funding Missed"
                               ? "!text-red-500"

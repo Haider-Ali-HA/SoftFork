@@ -19,9 +19,12 @@ import { useNavigate } from 'react-router-dom'
 import discussionBanner from "/images/discussionBanner.png"
 import webDesign from "/images/webDesign.png"
 import ProposeTaskModel from '../build/ProposeTaskModel'
+import TaskTable from './TaskTable'
+import BackerTable from '../build/BackerTable'
+import Comments from '../../components/common/Comments'
 
-const ProjectDetailsBuild3 = () => {
-    const [open,setOpen] = useState(true);
+const ProjectDetailsBuild2 = () => {
+    const [open,setOpen] = useState(false);
     
 
     const [noOfMilestonesToShow, setNoOfMilestonesToShow] = useState(1);
@@ -81,22 +84,22 @@ const ProjectDetailsBuild3 = () => {
 
                     <p className='font-semibold text-right'>{projectData.funded}%</p>
                     <ProgressBar fill={projectData.funded} color="#7A70BA" />
-                    <div className="grid sm:grid-cols-4 grid-cols-1  mt-10 text-center">
+                    <div className="grid sm:grid-cols-3 grid-cols-1  mt-10 text-center">
                         <div className='w-full text-left px-2 md:pl-4' >
-                            <p className="text-xl font-semibold text-light">Funding Needed:</p>
+                            <p className="text-xl font-semibold text-light">Funding Raised:</p>
                             <h2 className="text-3xl text-[#3D434A] font-bold">${projectData.fundedNeeded}</h2>
                         </div>
                         <div className=' w-full border-l-2 border-l-black text-left px-2 md:pl-4'>
-                            <p className="text-xl font-semibold text-light">Collected Funds</p>
-                            <h2 className="text-3xl text-[#3D434A] font-bold">${projectData.collectedFunds}</h2>
+                            <p className="text-xl font-semibold text-light">Start 
+                                Date
+                            </p>
+                            <h2 className="text-3xl text-[#3D434A] font-bold">25/08/2024</h2>
                         </div>
-                        <div className='text-xl font-semibold w-full border-l-2 border-l-black'>
-                            <p className="text-light">Funding Deadline</p>
+                        <div className='text-xl font-semibold w-full border-l-2 border-l-black text-left pl-5'>
+                            <p className="text-light">End Date</p>
                             <h2 className="text-3xl text-[#3D434A] font-bold">{projectData.fundingDeadline}</h2>
                         </div>
-                        <div className='text-xl font-semibold w-full border-l-2 border-l-black flex items-center justify-center px-2 md:px-4'>
-                            <ButtonOutline text={"Contribute Now!"} />
-                        </div>
+                      
                     </div>
 
 
@@ -144,6 +147,7 @@ const ProjectDetailsBuild3 = () => {
                                             <p className=' mb-4 text-[#5A5A5A] text-xs sm:text-sm'>{milestone.completionDeliverable}</p>
 
                                             <h2 className=" mb-4 text-lg text-[#121212] font-bold">Queries from Backers:</h2>
+                                            <Comments/>
 
                                             <div className="relative w-full font-gilroy">
                                                 <input
@@ -181,9 +185,17 @@ const ProjectDetailsBuild3 = () => {
                     <img src={discussionBanner} alt="" className='w-full h-full object-cover'/>
 
 
-                    <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Backers</h2>
+
+                    <TaskTable/>
+
+                
+                    <BackerTable/>
+
+                
                 
                     <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Gig Worker</h2>
+
+
 
                     <ProposeTaskModel
                     open={open}
@@ -198,7 +210,7 @@ const ProjectDetailsBuild3 = () => {
     )
 }
 
-export default ProjectDetailsBuild3
+export default ProjectDetailsBuild2
 
 
 const projectData = {

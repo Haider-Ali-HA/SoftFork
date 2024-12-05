@@ -61,7 +61,8 @@ import CreateMilestone from "./pages/build/CreateMilestone";
 import LeanCanvas from "./pages/build/LeanCanvas";
 import ProjectDetailsBuild from "./pages/build/ProjectDetailsBuild";
 import ProjectDetailsFund from "./pages/Fund/ProjectDetailsFund";
-import ProjectDetailsBuild3 from "./pages/Fund/ProjectDetailsBuild3";
+import AllTablesTesting from "./pages/AllTablesTesting";
+import ProjectDetailsBuild2 from "./pages/Fund/ProjectDetailsBuild2";
 
 const App = () => {
   return (
@@ -169,12 +170,13 @@ const App = () => {
           <Route path="key-metrics" element={<KeyMetrics />} />
           <Route path="lean-canvas" element={<LeanCanvas />} />
           <Route path="project-details" element={<ProjectDetailsBuild/>} />
-          <Route path="project-details2" element={<ProjectDetailsBuild3/>} />
+          <Route path="project-details2" element={<ProjectDetailsBuild2/>} />
           <Route path="proposals-and-voting" element={<ProposalsAndVoting />} />
         </Route>
 
         <Route path="/spend" element={<Spend />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/testing" element={<AllTablesTesting />} />
       </Routes>
 
       {/* <Navbar3/> */}

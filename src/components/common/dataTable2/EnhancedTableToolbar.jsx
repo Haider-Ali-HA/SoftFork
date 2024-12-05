@@ -82,17 +82,7 @@ export function EnhancedTableToolbar({
               <BsThreeDots className="text-2xl cursor-pointer my-auto" />
             </>
           ) : (
-            <>
-              <Tooltip title="Filter list">
-                <button
-                  className="border px-6 h-11 text-base rounded-lg flex gap-2 items-center justify-center border-gray-500"
-                  onClick={onToggleFilter}
-                >
-                  <img src={filterIcon} alt="filter icon" />
-                  Filter
-                </button>
-              </Tooltip>
-            </>
+            <></>
           )}
         </div>
       </Toolbar>
