@@ -114,12 +114,12 @@ const ProjectDetailsBuild2 = () => {
                                 <div className="flex justify-between">
                                     <h2 className=" mb-4 text-lg text-[#121212] font-bold">Milestone {index + 1}: {milestone.title}</h2>
                                     {
-                                        (index + 1) >= noOfMilestonesToShow ? (
+                                        (index) >= noOfMilestonesToShow ? (
                                             <button
                                                 type="button"
                                                 className="p-2 px-3  bg-gray-300 rounded-full flex items-center justify-center
                                                 "
-                                                onClick={() => setNoOfMilestonesToShow(noOfMilestonesToShow + 1)}
+                                                onClick={() => setNoOfMilestonesToShow((prev) => prev + 1)}
                                             >
                                                 <FaPlus size={12} />
                                             </button>

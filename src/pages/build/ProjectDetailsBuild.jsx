@@ -129,12 +129,12 @@ const ProjectDetailsBuild = () => {
                                 <div className="flex justify-between">
                                     <h2 className=" mb-4 text-lg text-[#121212] font-bold">Milestone {index + 1}: {milestone.title}</h2>
                                     {
-                                        (index + 1) >= noOfMilestonesToShow ? (
+                                        (index) >= noOfMilestonesToShow ? (
                                             <button
                                                 type="button"
                                                 className="p-2 px-3  bg-gray-300 rounded-full flex items-center justify-center
                                                 "
-                                                onClick={() => setNoOfMilestonesToShow(noOfMilestonesToShow + 1)}
+                                                onClick={() => setNoOfMilestonesToShow((prev) => prev + 1)}
                                             >
                                                 <FaPlus size={12} />
                                             </button>
@@ -162,7 +162,7 @@ const ProjectDetailsBuild = () => {
                                             <p className=' mb-4 text-[#5A5A5A] text-xs sm:text-sm'>{milestone.completionDeliverable}</p>
 
                                             <h2 className=" mb-4 text-lg text-[#121212] font-bold">Queries from Backers:</h2>
-                                            <Comments/>
+                                            <Comments />
 
                                             <div className="relative w-full font-gilroy">
                                                 <input
@@ -212,98 +212,112 @@ const ProjectDetailsBuild = () => {
                     <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Lean Canvas & Documentations</h2>
                     <h2 className=" mb-4 text-md text-[#121212] font-bold">Lean Canvas</h2>
 
-                    {/* grid */}
-                    <div className="grid grid-cols-5 border-4 border-black mt-6 mx-4">
-                        <div className=" border-2 border-black text-black p-4 row-span-2">
-
+                     {/* grid */}
+                     <div className="grid grid-cols-1 md:grid-cols-5 border-4 border-black mt-6 mx-4">
+                        <div className="border-2 border-black text-black  p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Problem"}
                                 name="problem"
-                                value={"abc"}
+                                value={canvasData.problem}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                             <TextareaField2
                                 placeholderText={""}
                                 inputLabel={"Existing Alternatives"}
                                 name={"existingAlternatives"}
-                                value={"abc"}
+                                value={canvasData.existingAlternatives}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
-
                         </div>
-                        <div className=" border-2 border-black text-black p-4">
+                        <div className="border-2 border-black text-black p-4">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Solutions"}
                                 name="solutions"
-                                value={"abc"}
+                                value={canvasData.solutions}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
-                        <div className="border-2 border-black text-black p-4 row-span-2">
+                        <div className="border-2 border-black text-black p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Unique Value Propositions"}
                                 name="uniqueValueProposition"
-                                value={"abc"}
+                                value={canvasData.uniqueValueProposition}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"High Level Concept"}
                                 name="highLevelConcept"
-                                value={"abc"}
+                                value={canvasData.highLevelConcept}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
-                        <div className=" border-2 border-black text-black p-4">
+                        <div className="border-2 border-black text-black p-4">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Unfair Advantage"}
                                 name="unfairAdvantage"
-                                value={"abc"}
+                                value={canvasData.unfairAdvantage}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
-                        <div className=" border-2 border-black text-black p-4 row-span-2">
+                        <div className="border-2 border-black text-black p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Customer Segment"}
                                 name="customerSegment"
-                                value={"abc"}
+                                value={canvasData.customerSegment}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Early Adopters"}
                                 name="earlyAdopters"
-                                value={"abc"}
+                                value={canvasData.earlyAdopters}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
                         <div className="border-2 border-black text-black p-4">
@@ -311,11 +325,13 @@ const ProjectDetailsBuild = () => {
                                 placeholderText=""
                                 inputLabel={"Key Metrics"}
                                 name="keyMetrics"
-                                value={"abc"}
+                                value={canvasData.keyMetrics}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
                         <div className="border-2 border-black text-black p-4">
@@ -323,43 +339,50 @@ const ProjectDetailsBuild = () => {
                                 placeholderText=""
                                 inputLabel={"Channels"}
                                 name="channels"
-                                value={"abc"}
+                                value={canvasData.channels}
                                 showWordCount={false}
                                 lableStyling="text-xs"
                                 textStyling='text-xs'
                                 outline={false}
+                                isCanvas
+                                disabled
                             />
                         </div>
-
-                        <div className="col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-4 border-black">
-                            <div className=" border-2 border-black text-black p-4">
+                        <div className="col-span-1 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-0 border-black ">
+                            <div className="border-2 border-black text-black p-4">
                                 <TextareaField2
                                     placeholderText=""
                                     inputLabel={"Cost Structure"}
                                     name="costStructure"
-                                    value={"abc"}
+                                    value={canvasData.costStructure}
                                     showWordCount={false}
                                     lableStyling="text-xs"
                                     textStyling='text-xs'
                                     rows={2}
                                     outline={false}
+                                    isCanvas
+                                    disabled
                                 />
                             </div>
-                            <div className=" border-2 border-black text-black p-4">
+                            <div className="border-2 border-black text-black p-4">
                                 <TextareaField2
                                     placeholderText=""
                                     inputLabel={"Reserve Streams"}
                                     name="revenueStreams"
-                                    value={"abc"}
+                                    value={canvasData.reserveStreams}
                                     showWordCount={false}
                                     lableStyling="text-xs"
                                     textStyling='text-xs'
                                     rows={2}
                                     outline={false}
+                                    isCanvas
+                                    disabled
                                 />
                             </div>
                         </div>
                     </div>
+
+
 
                     <div className="relative">
                         <h2 className="mb-4 mt-8 text-md text-[#121212] font-bold">PowerPoint Slides</h2>
@@ -456,7 +479,7 @@ const ProjectDetailsBuild = () => {
                     </div>
 
                     {/* Key Metrics */}
-                    <h2 className=" mb-4 text-md text-[#121212] font-bold">Key Metrics and Insights</h2>
+                    <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Key Metrics and Insights</h2>
                     <h2 className=" mb-4 text-md text-[#121212] font-bold">Market Research Summary</h2>
                     <p className='mt-1 text-[#5A5A5A] text-xs sm:text-sm'>
                         Our market research for Eco-Friendly Packaging is the following:
@@ -619,4 +642,19 @@ const projectData = {
             completionDeliverable: "Fully functional website with integrated donation system, volunteer sign-up, project showcase, and CMS for easy updates."
         }
     ]
+}
+
+const canvasData = {
+    problem: "List your customers top 3 problems",
+    existingAlternatives: "List how these problems are solved today",
+    solutions: "Outline possible solution for each problem",
+    keyMetrics: "List key numbers telling how your business is doing today",
+    uniqueValueProposition: "Single, clear, compelling that turns an unaware visitor into an interested prospect ",
+    highLevelConcept: "List your X for Y analogy (e.g. YouTube = Flickr for videos)",
+    unfairAdvantage: "Something that can't be easily copied or bought ",
+    channels: "List your path to customers",
+    customerSegment: "List your target customers and users",
+    earlyAdopters: "List characteristics of your ideal customer",
+    costStructure: "List your fixed and variable costs",
+    reserveStreams: "List your sources of revenue"
 }

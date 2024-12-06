@@ -12,7 +12,8 @@ const TextareaField2 = ({
     lableStyling="",
     textStyling="",
     disabled=false,
-    outline=true
+    outline=true,
+    isCanvas=false
 }) => {
     const [wordCount, setWordCount] = useState(0);
     useEffect(() => {
@@ -36,7 +37,7 @@ const TextareaField2 = ({
             )}
             <textarea
                 id={inputLabel}
-                className={`w-full mt-2 border rounded-lg placeholder:text-[#808080] px-4 py-3 md:py-4 outline-none ${textStyling} ${!outline && 'border-none resize-none'}`}
+                className={`w-full mt-2 border rounded-lg placeholder:text-[#808080] px-4 py-3 md:py-4 outline-none ${textStyling} ${!outline && 'border-none resize-none'} ${isCanvas && "px-1 text-light bg-transparent"}`}
                 placeholder={placeholderText}
                 required
                 name={name}
