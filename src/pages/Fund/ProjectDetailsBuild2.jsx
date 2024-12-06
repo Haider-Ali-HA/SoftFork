@@ -51,7 +51,7 @@ const ProjectDetailsBuild2 = () => {
 
                     <MainHeading text={projectData.title} />
                     <div className="mx-auto w-fit mt-1">
-                        <div className="px-2 px-1 text-[#00A2FF] border border-[#00A2FF] rounded-lg bg-[#00A2FF] bg-opacity-[30%]">
+                        <div className="px-2 text-[#00A2FF] border border-[#00A2FF] rounded-lg bg-[#00A2FF] bg-opacity-[30%]">
                             {projectData.status}
                         </div>
                     </div>
