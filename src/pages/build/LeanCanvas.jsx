@@ -57,8 +57,8 @@ const LeanCanvas = () => {
 
 
                 {/* grid */}
-                <div className="grid grid-cols-5 border-4 border-black mt-6 mx-4">
-                    <div className=" border-2 border-black text-black p-4 row-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-5 border-4 border-black mt-6 mx-4">
+                    <div className=" border-2 border-black text-black p-4 md:row-span-2">
 
                         <TextareaField2
                             placeholderText=""
@@ -94,7 +94,7 @@ const LeanCanvas = () => {
                             textStyling='text-xs'
                         />
                     </div>
-                    <div className="border-2 border-black text-black p-4 row-span-2">
+                    <div className="border-2 border-black text-black p-4 md:row-span-2">
                         <TextareaField2
                             placeholderText=""
                             inputLabel={"Unique Value Propositions"}
@@ -128,7 +128,7 @@ const LeanCanvas = () => {
                             textStyling='text-xs'
                         />
                     </div>
-                    <div className=" border-2 border-black text-black p-4 row-span-2">
+                    <div className=" border-2 border-black text-black p-4 md:row-span-2">
                         <TextareaField2
                             placeholderText=""
                             inputLabel={"Customer Segment"}
@@ -175,7 +175,7 @@ const LeanCanvas = () => {
                         />
                     </div>
 
-                    <div className="col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-4 border-black">
+                    <div className="col-span-1 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-0 border-black">
                         <div className=" border-2 border-black text-black p-4">
                             <TextareaField2
                                 placeholderText=""

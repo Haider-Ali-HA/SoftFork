@@ -203,10 +203,10 @@ const ProjectDetailsFund = () => {
                     <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Lean Canvas & Documentations</h2>
                     <h2 className=" mb-4 text-md text-[#121212] font-bold">Lean Canvas</h2>
 
-                   {/* grid */}
-                   <div className="grid grid-cols-5 border-4 border-black mt-6 mx-4">
-                        <div className=" border-2 border-black text-black p-4 row-span-2">
-
+                  
+                     {/* grid */}
+                     <div className="grid grid-cols-1 md:grid-cols-5 border-4 border-black mt-6 mx-4">
+                        <div className="border-2 border-black text-black  p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Problem"}
@@ -231,9 +231,8 @@ const ProjectDetailsFund = () => {
                                 isCanvas
                                 disabled
                             />
-
                         </div>
-                        <div className=" border-2 border-black text-black p-4">
+                        <div className="border-2 border-black text-black p-4">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Solutions"}
@@ -247,7 +246,7 @@ const ProjectDetailsFund = () => {
                                 disabled
                             />
                         </div>
-                        <div className="border-2 border-black text-black p-4 row-span-2">
+                        <div className="border-2 border-black text-black p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Unique Value Propositions"}
@@ -273,7 +272,7 @@ const ProjectDetailsFund = () => {
                                 disabled
                             />
                         </div>
-                        <div className=" border-2 border-black text-black p-4">
+                        <div className="border-2 border-black text-black p-4">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Unfair Advantage"}
@@ -287,7 +286,7 @@ const ProjectDetailsFund = () => {
                                 disabled
                             />
                         </div>
-                        <div className=" border-2 border-black text-black p-4 row-span-2">
+                        <div className="border-2 border-black text-black p-4 md:row-span-2">
                             <TextareaField2
                                 placeholderText=""
                                 inputLabel={"Customer Segment"}
@@ -341,9 +340,8 @@ const ProjectDetailsFund = () => {
                                 disabled
                             />
                         </div>
-
-                        <div className="col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-4 border-black">
-                            <div className=" border-2 border-black text-black p-4">
+                        <div className="col-span-1 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 border-t-0 border-black ">
+                            <div className="border-2 border-black text-black p-4">
                                 <TextareaField2
                                     placeholderText=""
                                     inputLabel={"Cost Structure"}
@@ -358,7 +356,7 @@ const ProjectDetailsFund = () => {
                                     disabled
                                 />
                             </div>
-                            <div className=" border-2 border-black text-black p-4">
+                            <div className="border-2 border-black text-black p-4">
                                 <TextareaField2
                                     placeholderText=""
                                     inputLabel={"Reserve Streams"}
@@ -375,6 +373,7 @@ const ProjectDetailsFund = () => {
                             </div>
                         </div>
                     </div>
+
 
 
                     <div className="relative">
