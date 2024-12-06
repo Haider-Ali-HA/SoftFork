@@ -130,7 +130,7 @@ const AllTablesTesting = () => {
   return (
     <div className="py-10">
       <div>
-        <MainHeading text={"Tasks"} />
+        <MainHeading text={"Gig Worker"} />
         <div className="rounded lg:p-10">
           <DataTable columns={columns} rows={rowsToRender} />
         </div>

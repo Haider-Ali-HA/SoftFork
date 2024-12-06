@@ -22,6 +22,7 @@ import ProposeTaskModel from '../build/ProposeTaskModel'
 import TaskTable from './TaskTable'
 import BackerTable from '../build/BackerTable'
 import Comments from '../../components/common/Comments'
+import GigWorkerTable from '../build/GigWorkerTable'
 
 const ProjectDetailsBuild2 = () => {
     const [open,setOpen] = useState(false);
@@ -193,7 +194,7 @@ const ProjectDetailsBuild2 = () => {
 
                 
                 
-                    <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Gig Worker</h2>
+                    <GigWorkerTable/>
 
 
 
