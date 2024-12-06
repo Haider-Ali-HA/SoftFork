@@ -25,8 +25,8 @@ import Comments from '../../components/common/Comments'
 import GigWorkerTable from '../build/GigWorkerTable'
 
 const ProjectDetailsBuild2 = () => {
-    const [open,setOpen] = useState(false);
-    
+    const [open, setOpen] = useState(false);
+
 
     const [noOfMilestonesToShow, setNoOfMilestonesToShow] = useState(1);
     const navigate = useNavigate()
@@ -41,10 +41,10 @@ const ProjectDetailsBuild2 = () => {
     return (
         <>
             <Navbar3 />
-            <div className="w-full max-w-6xl mx-auto">
+            <div className="w-full px-4 ">
 
                 <div className="relative">
-                    <h4 className={`text-lg w-full text-left md:text-xl font-gilroy font-bold absolute top-4 left-20`}>
+                    <h4 className={`text-lg w-full text-left md:text-xl font-gilroy font-bold absolute top-16 sm:top-4 left-20`}>
                         <span className='text-light mr-10'>My Role:</span> <span className='text-light mr-10'>Tokens:</span>
                         <br />
                         <span className='text-[#3D434A] mr-10 text-2xl'>Founder</span> <span className='text-[#3D434A] mr-10 text-2xl'>150</span>
@@ -58,7 +58,7 @@ const ProjectDetailsBuild2 = () => {
                     </div>
                     <div className="mb-6"></div>
 
-                    <div className="relative rounded-3xl ">
+                    <div className="relative rounded-3xl sm:mt-0 mt-20">
                         <img
                             src={webDesign}
                             className="w-full h-80 object-cover rounded-3xl mx-auto"
@@ -91,7 +91,7 @@ const ProjectDetailsBuild2 = () => {
                             <h2 className="text-3xl text-[#3D434A] font-bold">${projectData.fundedNeeded}</h2>
                         </div>
                         <div className=' w-full border-l-2 border-l-black text-left px-2 md:pl-4'>
-                            <p className="text-xl font-semibold text-light">Start 
+                            <p className="text-xl font-semibold text-light">Start
                                 Date
                             </p>
                             <h2 className="text-3xl text-[#3D434A] font-bold">25/08/2024</h2>
@@ -100,7 +100,7 @@ const ProjectDetailsBuild2 = () => {
                             <p className="text-light">End Date</p>
                             <h2 className="text-3xl text-[#3D434A] font-bold">{projectData.fundingDeadline}</h2>
                         </div>
-                      
+
                     </div>
 
 
@@ -148,7 +148,7 @@ const ProjectDetailsBuild2 = () => {
                                             <p className=' mb-4 text-[#5A5A5A] text-xs sm:text-sm'>{milestone.completionDeliverable}</p>
 
                                             <h2 className=" mb-4 text-lg text-[#121212] font-bold">Queries from Backers:</h2>
-                                            <Comments/>
+                                            <Comments />
 
                                             <div className="relative w-full font-gilroy">
                                                 <input
@@ -183,25 +183,25 @@ const ProjectDetailsBuild2 = () => {
                     }
 
                     <h2 className=" mt-10 mb-6 text-3xl text-black text-center font-bold">Discussion</h2>
-                    <img src={discussionBanner} alt="" className='w-full h-full object-cover'/>
+                    <img src={discussionBanner} alt="" className='w-full h-full object-cover' />
 
 
 
-                    <TaskTable/>
+                    <TaskTable />
 
-                
-                    <BackerTable/>
 
-                
-                
-                    <GigWorkerTable/>
+                    <BackerTable />
+
+
+
+                    <GigWorkerTable />
 
 
 
                     <ProposeTaskModel
-                    open={open}
-                    handleClose={handleClose}
-                />
+                        open={open}
+                        handleClose={handleClose}
+                    />
 
                 </div>
 
@@ -216,11 +216,11 @@ export default ProjectDetailsBuild2
 
 const projectData = {
     title: "Website Design",
-    status:"Seeding",
-    role:"Founder",
-    tokens:150,
+    status: "Seeding",
+    role: "Founder",
+    tokens: 150,
     authorPhoto: profile1,
-    image:webDesign,
+    image: webDesign,
     projectTags: ["Deadline Passed", "Fund Completed"],
     funded: 80,
     fundedNeeded: 5635,
