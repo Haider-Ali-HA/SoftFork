@@ -16,8 +16,8 @@ const Header = () => {
         </h2>
       </div>
 
-      <div className="flex items-center">
-        <div className="w-2/6 py-2 rounded-full hidden lg:block">
+      <div className="flex items-center ">
+        <div className="w-2/6 py-2 rounded-full hidden lg:block ">
           {/* search */}
           <div className="flex items-center w-full relative">
             <CiSearch className="absolute ml-3 text-gray-600 text-xl" />
@@ -29,7 +29,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="p-2 flex  items-center gap-2">
+        <div className="p-2 flex  items-center gap-2 ">
           {/* notification */}
           <div className="  hidden lg:flex">
             <img src={BellIcon} alt="notification" className="w-9 h-9 ml-2" />
@@ -40,7 +40,7 @@ const Header = () => {
             />
           </div>
           {/* profile */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center z-50 gap-2">
             <div className="">
               <img src={profilePhoto} alt="profile-photo" />
             </div>
@@ -57,7 +57,7 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute top-16 right-0 bg-white shadow-lg rounded-lg p-4 lg:hidden">
+        <div className="absolute top-16 right-0 bg-white z-50 shadow-lg rounded-lg p-4 lg:hidden">
           <div className="w-full py-2 rounded-full">
             {/* search */}
             <div className="flex items-center w-full relative">
