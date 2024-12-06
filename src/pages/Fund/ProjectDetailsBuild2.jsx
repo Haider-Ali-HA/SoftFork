@@ -41,7 +41,7 @@ const ProjectDetailsBuild2 = () => {
     return (
         <>
             <Navbar3 />
-            <div className="w-full px-4 ">
+            <div className="w-full px-4 max-w-6xl mx-auto">
 
                 <div className="relative">
                     <h4 className={`text-lg w-full text-left md:text-xl font-gilroy font-bold absolute top-16 sm:top-4 left-20`}>
